@@ -32,33 +32,40 @@ namespace MicroMeter_Pro
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton2 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.guna2CustomRadioButton1 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.guna2TextBox3 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox2 = new Guna.UI2.WinForms.Guna2TextBox();
-            this.guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
+            this.rb_female = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rb_male = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.tbox_wiek = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbox_wzrost = new Guna.UI2.WinForms.Guna2TextBox();
+            this.tbox_waga = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            this.guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbox_wzor = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.guna2ComboBox2 = new Guna.UI2.WinForms.Guna2ComboBox();
+            this.cbox_pal = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2CustomRadioButton4 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.guna2CustomRadioButton3 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rb_redukcja = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rb_utrzymanie = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton5 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rb_tycie = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.label12 = new System.Windows.Forms.Label();
-            this.guna2CustomRadioButton6 = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rb_miesniowa = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.button_wyczysc = new Guna.UI2.WinForms.Guna2Button();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label16_ppm = new System.Windows.Forms.Label();
+            this.label16_cpm = new System.Windows.Forms.Label();
+            this.label16_BMI = new System.Windows.Forms.Label();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
+            this.guna2GroupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -66,11 +73,11 @@ namespace MicroMeter_Pro
             this.guna2GroupBox1.BorderRadius = 5;
             this.guna2GroupBox1.Controls.Add(this.label6);
             this.guna2GroupBox1.Controls.Add(this.label5);
-            this.guna2GroupBox1.Controls.Add(this.guna2CustomRadioButton2);
-            this.guna2GroupBox1.Controls.Add(this.guna2CustomRadioButton1);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox3);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox2);
-            this.guna2GroupBox1.Controls.Add(this.guna2TextBox1);
+            this.guna2GroupBox1.Controls.Add(this.rb_female);
+            this.guna2GroupBox1.Controls.Add(this.rb_male);
+            this.guna2GroupBox1.Controls.Add(this.tbox_wiek);
+            this.guna2GroupBox1.Controls.Add(this.tbox_wzrost);
+            this.guna2GroupBox1.Controls.Add(this.tbox_waga);
             this.guna2GroupBox1.Controls.Add(this.label4);
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.label2);
@@ -91,7 +98,7 @@ namespace MicroMeter_Pro
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(209, 203);
+            this.label6.Location = new System.Drawing.Point(225, 202);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 15);
             this.label6.TabIndex = 7;
@@ -102,131 +109,131 @@ namespace MicroMeter_Pro
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(104, 203);
+            this.label5.Location = new System.Drawing.Point(126, 202);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 7;
             this.label5.Text = "Mężczyzna";
             // 
-            // guna2CustomRadioButton2
+            // rb_female
             // 
-            this.guna2CustomRadioButton2.Animated = true;
-            this.guna2CustomRadioButton2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton2.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton2.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton2.CheckedState.Parent = this.guna2CustomRadioButton2;
-            this.guna2CustomRadioButton2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CustomRadioButton2.Location = new System.Drawing.Point(183, 200);
-            this.guna2CustomRadioButton2.Name = "guna2CustomRadioButton2";
-            this.guna2CustomRadioButton2.ShadowDecoration.Parent = this.guna2CustomRadioButton2;
-            this.guna2CustomRadioButton2.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton2.TabIndex = 6;
-            this.guna2CustomRadioButton2.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton2.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton2.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton2.UncheckedState.Parent = this.guna2CustomRadioButton2;
+            this.rb_female.Animated = true;
+            this.rb_female.BackColor = System.Drawing.Color.Transparent;
+            this.rb_female.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_female.CheckedState.BorderThickness = 0;
+            this.rb_female.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_female.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_female.CheckedState.Parent = this.rb_female;
+            this.rb_female.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_female.Location = new System.Drawing.Point(204, 200);
+            this.rb_female.Name = "rb_female";
+            this.rb_female.ShadowDecoration.Parent = this.rb_female;
+            this.rb_female.Size = new System.Drawing.Size(20, 20);
+            this.rb_female.TabIndex = 6;
+            this.rb_female.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_female.UncheckedState.BorderThickness = 2;
+            this.rb_female.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_female.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_female.UncheckedState.Parent = this.rb_female;
             // 
-            // guna2CustomRadioButton1
+            // rb_male
             // 
-            this.guna2CustomRadioButton1.Animated = true;
-            this.guna2CustomRadioButton1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton1.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton1.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton1.CheckedState.Parent = this.guna2CustomRadioButton1;
-            this.guna2CustomRadioButton1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CustomRadioButton1.Location = new System.Drawing.Point(78, 200);
-            this.guna2CustomRadioButton1.Name = "guna2CustomRadioButton1";
-            this.guna2CustomRadioButton1.ShadowDecoration.Parent = this.guna2CustomRadioButton1;
-            this.guna2CustomRadioButton1.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton1.TabIndex = 6;
-            this.guna2CustomRadioButton1.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton1.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton1.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton1.UncheckedState.Parent = this.guna2CustomRadioButton1;
+            this.rb_male.Animated = true;
+            this.rb_male.BackColor = System.Drawing.Color.Transparent;
+            this.rb_male.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_male.CheckedState.BorderThickness = 0;
+            this.rb_male.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_male.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_male.CheckedState.Parent = this.rb_male;
+            this.rb_male.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_male.Location = new System.Drawing.Point(105, 200);
+            this.rb_male.Name = "rb_male";
+            this.rb_male.ShadowDecoration.Parent = this.rb_male;
+            this.rb_male.Size = new System.Drawing.Size(20, 20);
+            this.rb_male.TabIndex = 6;
+            this.rb_male.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_male.UncheckedState.BorderThickness = 2;
+            this.rb_male.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_male.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_male.UncheckedState.Parent = this.rb_male;
             // 
-            // guna2TextBox3
+            // tbox_wiek
             // 
-            this.guna2TextBox3.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox3.DefaultText = "";
-            this.guna2TextBox3.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox3.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox3.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.DisabledState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox3.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.FocusedState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2TextBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox3.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox3.HoverState.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Location = new System.Drawing.Point(78, 147);
-            this.guna2TextBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox3.Name = "guna2TextBox3";
-            this.guna2TextBox3.PasswordChar = '\0';
-            this.guna2TextBox3.PlaceholderText = "";
-            this.guna2TextBox3.SelectedText = "";
-            this.guna2TextBox3.ShadowDecoration.Parent = this.guna2TextBox3;
-            this.guna2TextBox3.Size = new System.Drawing.Size(199, 36);
-            this.guna2TextBox3.TabIndex = 5;
-            this.guna2TextBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_wiek.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbox_wiek.DefaultText = "";
+            this.tbox_wiek.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbox_wiek.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbox_wiek.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_wiek.DisabledState.Parent = this.tbox_wiek;
+            this.tbox_wiek.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_wiek.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_wiek.FocusedState.Parent = this.tbox_wiek;
+            this.tbox_wiek.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbox_wiek.ForeColor = System.Drawing.Color.Black;
+            this.tbox_wiek.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_wiek.HoverState.Parent = this.tbox_wiek;
+            this.tbox_wiek.Location = new System.Drawing.Point(107, 147);
+            this.tbox_wiek.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbox_wiek.Name = "tbox_wiek";
+            this.tbox_wiek.PasswordChar = '\0';
+            this.tbox_wiek.PlaceholderText = "lat";
+            this.tbox_wiek.SelectedText = "";
+            this.tbox_wiek.ShadowDecoration.Parent = this.tbox_wiek;
+            this.tbox_wiek.Size = new System.Drawing.Size(170, 36);
+            this.tbox_wiek.TabIndex = 5;
+            this.tbox_wiek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox2
+            // tbox_wzrost
             // 
-            this.guna2TextBox2.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox2.DefaultText = "";
-            this.guna2TextBox2.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox2.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox2.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.DisabledState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox2.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.FocusedState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2TextBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox2.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox2.HoverState.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Location = new System.Drawing.Point(78, 102);
-            this.guna2TextBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox2.Name = "guna2TextBox2";
-            this.guna2TextBox2.PasswordChar = '\0';
-            this.guna2TextBox2.PlaceholderText = "";
-            this.guna2TextBox2.SelectedText = "";
-            this.guna2TextBox2.ShadowDecoration.Parent = this.guna2TextBox2;
-            this.guna2TextBox2.Size = new System.Drawing.Size(199, 36);
-            this.guna2TextBox2.TabIndex = 4;
-            this.guna2TextBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_wzrost.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbox_wzrost.DefaultText = "";
+            this.tbox_wzrost.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbox_wzrost.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbox_wzrost.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_wzrost.DisabledState.Parent = this.tbox_wzrost;
+            this.tbox_wzrost.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_wzrost.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_wzrost.FocusedState.Parent = this.tbox_wzrost;
+            this.tbox_wzrost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbox_wzrost.ForeColor = System.Drawing.Color.Black;
+            this.tbox_wzrost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_wzrost.HoverState.Parent = this.tbox_wzrost;
+            this.tbox_wzrost.Location = new System.Drawing.Point(107, 102);
+            this.tbox_wzrost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbox_wzrost.Name = "tbox_wzrost";
+            this.tbox_wzrost.PasswordChar = '\0';
+            this.tbox_wzrost.PlaceholderText = "centymetry";
+            this.tbox_wzrost.SelectedText = "";
+            this.tbox_wzrost.ShadowDecoration.Parent = this.tbox_wzrost;
+            this.tbox_wzrost.Size = new System.Drawing.Size(170, 36);
+            this.tbox_wzrost.TabIndex = 4;
+            this.tbox_wzrost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // guna2TextBox1
+            // tbox_waga
             // 
-            this.guna2TextBox1.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.guna2TextBox1.DefaultText = "";
-            this.guna2TextBox1.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.guna2TextBox1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.guna2TextBox1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.DisabledState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.guna2TextBox1.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.FocusedState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.guna2TextBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2TextBox1.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2TextBox1.HoverState.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Location = new System.Drawing.Point(78, 57);
-            this.guna2TextBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.guna2TextBox1.Name = "guna2TextBox1";
-            this.guna2TextBox1.PasswordChar = '\0';
-            this.guna2TextBox1.PlaceholderText = "";
-            this.guna2TextBox1.SelectedText = "";
-            this.guna2TextBox1.ShadowDecoration.Parent = this.guna2TextBox1;
-            this.guna2TextBox1.Size = new System.Drawing.Size(199, 36);
-            this.guna2TextBox1.TabIndex = 3;
-            this.guna2TextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_waga.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbox_waga.DefaultText = "";
+            this.tbox_waga.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbox_waga.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbox_waga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_waga.DisabledState.Parent = this.tbox_waga;
+            this.tbox_waga.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_waga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_waga.FocusedState.Parent = this.tbox_waga;
+            this.tbox_waga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbox_waga.ForeColor = System.Drawing.Color.Black;
+            this.tbox_waga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_waga.HoverState.Parent = this.tbox_waga;
+            this.tbox_waga.Location = new System.Drawing.Point(107, 57);
+            this.tbox_waga.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbox_waga.Name = "tbox_waga";
+            this.tbox_waga.PasswordChar = '\0';
+            this.tbox_waga.PlaceholderText = "kilogramy";
+            this.tbox_waga.SelectedText = "";
+            this.tbox_waga.ShadowDecoration.Parent = this.tbox_waga;
+            this.tbox_waga.Size = new System.Drawing.Size(170, 36);
+            this.tbox_waga.TabIndex = 3;
+            this.tbox_waga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -236,9 +243,9 @@ namespace MicroMeter_Pro
             this.label4.ForeColor = System.Drawing.Color.Black;
             this.label4.Location = new System.Drawing.Point(13, 198);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(38, 21);
+            this.label4.Size = new System.Drawing.Size(41, 21);
             this.label4.TabIndex = 2;
-            this.label4.Text = "Płeć";
+            this.label4.Text = "Płeć:";
             // 
             // label3
             // 
@@ -248,9 +255,9 @@ namespace MicroMeter_Pro
             this.label3.ForeColor = System.Drawing.Color.Black;
             this.label3.Location = new System.Drawing.Point(13, 153);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(45, 21);
+            this.label3.Size = new System.Drawing.Size(48, 21);
             this.label3.TabIndex = 2;
-            this.label3.Text = "Wiek";
+            this.label3.Text = "Wiek:";
             // 
             // label2
             // 
@@ -260,9 +267,9 @@ namespace MicroMeter_Pro
             this.label2.ForeColor = System.Drawing.Color.Black;
             this.label2.Location = new System.Drawing.Point(13, 108);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 21);
+            this.label2.Size = new System.Drawing.Size(62, 21);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Wzrost";
+            this.label2.Text = "Wzrost:";
             // 
             // label1
             // 
@@ -272,9 +279,9 @@ namespace MicroMeter_Pro
             this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(13, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 21);
+            this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Waga";
+            this.label1.Text = "Waga:";
             // 
             // guna2HtmlLabel1
             // 
@@ -287,31 +294,31 @@ namespace MicroMeter_Pro
             this.guna2HtmlLabel1.TabIndex = 1;
             this.guna2HtmlLabel1.Text = "MicroMeter";
             // 
-            // guna2ComboBox1
+            // cbox_wzor
             // 
-            this.guna2ComboBox1.Animated = true;
-            this.guna2ComboBox1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox1.BorderRadius = 5;
-            this.guna2ComboBox1.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox1.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox1.FocusedState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox1.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox1.FormattingEnabled = true;
-            this.guna2ComboBox1.HoverState.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.ItemHeight = 30;
-            this.guna2ComboBox1.Items.AddRange(new object[] {
+            this.cbox_wzor.Animated = true;
+            this.cbox_wzor.BackColor = System.Drawing.Color.Transparent;
+            this.cbox_wzor.BorderRadius = 5;
+            this.cbox_wzor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbox_wzor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_wzor.FocusedColor = System.Drawing.Color.Empty;
+            this.cbox_wzor.FocusedState.Parent = this.cbox_wzor;
+            this.cbox_wzor.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbox_wzor.ForeColor = System.Drawing.Color.Black;
+            this.cbox_wzor.FormattingEnabled = true;
+            this.cbox_wzor.HoverState.Parent = this.cbox_wzor;
+            this.cbox_wzor.ItemHeight = 30;
+            this.cbox_wzor.Items.AddRange(new object[] {
             "Mifflin–St Jeor",
             "Harris–Benedict",
             "Katch–McArdle"});
-            this.guna2ComboBox1.ItemsAppearance.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Location = new System.Drawing.Point(588, 450);
-            this.guna2ComboBox1.Name = "guna2ComboBox1";
-            this.guna2ComboBox1.ShadowDecoration.Parent = this.guna2ComboBox1;
-            this.guna2ComboBox1.Size = new System.Drawing.Size(151, 36);
-            this.guna2ComboBox1.StartIndex = 0;
-            this.guna2ComboBox1.TabIndex = 2;
+            this.cbox_wzor.ItemsAppearance.Parent = this.cbox_wzor;
+            this.cbox_wzor.Location = new System.Drawing.Point(588, 450);
+            this.cbox_wzor.Name = "cbox_wzor";
+            this.cbox_wzor.ShadowDecoration.Parent = this.cbox_wzor;
+            this.cbox_wzor.Size = new System.Drawing.Size(151, 36);
+            this.cbox_wzor.StartIndex = 0;
+            this.cbox_wzor.TabIndex = 2;
             // 
             // label7
             // 
@@ -325,33 +332,33 @@ namespace MicroMeter_Pro
             this.label7.TabIndex = 2;
             this.label7.Text = "Wzór dla PPM (BMR)";
             // 
-            // guna2ComboBox2
+            // cbox_pal
             // 
-            this.guna2ComboBox2.Animated = true;
-            this.guna2ComboBox2.BackColor = System.Drawing.Color.Transparent;
-            this.guna2ComboBox2.BorderRadius = 5;
-            this.guna2ComboBox2.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.guna2ComboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.guna2ComboBox2.FocusedColor = System.Drawing.Color.Empty;
-            this.guna2ComboBox2.FocusedState.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.guna2ComboBox2.ForeColor = System.Drawing.Color.Black;
-            this.guna2ComboBox2.FormattingEnabled = true;
-            this.guna2ComboBox2.HoverState.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.ItemHeight = 30;
-            this.guna2ComboBox2.Items.AddRange(new object[] {
+            this.cbox_pal.Animated = true;
+            this.cbox_pal.BackColor = System.Drawing.Color.Transparent;
+            this.cbox_pal.BorderRadius = 5;
+            this.cbox_pal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
+            this.cbox_pal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_pal.FocusedColor = System.Drawing.Color.Empty;
+            this.cbox_pal.FocusedState.Parent = this.cbox_pal;
+            this.cbox_pal.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.cbox_pal.ForeColor = System.Drawing.Color.Black;
+            this.cbox_pal.FormattingEnabled = true;
+            this.cbox_pal.HoverState.Parent = this.cbox_pal;
+            this.cbox_pal.ItemHeight = 30;
+            this.cbox_pal.Items.AddRange(new object[] {
             "1,2 – brak aktywności",
             "1,4 – lekka aktywność",
             "1,6 – umiarkowana (2x trening, fizyczna praca)",
             "1,8 – duża",
             "2,0+ – bardzo wysoka"});
-            this.guna2ComboBox2.ItemsAppearance.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.Location = new System.Drawing.Point(318, 450);
-            this.guna2ComboBox2.Name = "guna2ComboBox2";
-            this.guna2ComboBox2.ShadowDecoration.Parent = this.guna2ComboBox2;
-            this.guna2ComboBox2.Size = new System.Drawing.Size(264, 36);
-            this.guna2ComboBox2.StartIndex = 0;
-            this.guna2ComboBox2.TabIndex = 3;
+            this.cbox_pal.ItemsAppearance.Parent = this.cbox_pal;
+            this.cbox_pal.Location = new System.Drawing.Point(322, 450);
+            this.cbox_pal.Name = "cbox_pal";
+            this.cbox_pal.ShadowDecoration.Parent = this.cbox_pal;
+            this.cbox_pal.Size = new System.Drawing.Size(260, 36);
+            this.cbox_pal.StartIndex = 0;
+            this.cbox_pal.TabIndex = 3;
             // 
             // label8
             // 
@@ -361,18 +368,18 @@ namespace MicroMeter_Pro
             this.label8.ForeColor = System.Drawing.Color.White;
             this.label8.Location = new System.Drawing.Point(318, 426);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(147, 21);
+            this.label8.Size = new System.Drawing.Size(177, 21);
             this.label8.TabIndex = 2;
-            this.label8.Text = "Aktywność Fizyczna";
+            this.label8.Text = "Aktywność Fizyczna PAL";
             // 
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderRadius = 5;
-            this.guna2GroupBox2.Controls.Add(this.guna2CustomRadioButton6);
-            this.guna2GroupBox2.Controls.Add(this.guna2CustomRadioButton5);
-            this.guna2GroupBox2.Controls.Add(this.guna2CustomRadioButton4);
+            this.guna2GroupBox2.Controls.Add(this.rb_miesniowa);
+            this.guna2GroupBox2.Controls.Add(this.rb_tycie);
+            this.guna2GroupBox2.Controls.Add(this.rb_redukcja);
             this.guna2GroupBox2.Controls.Add(this.label12);
-            this.guna2GroupBox2.Controls.Add(this.guna2CustomRadioButton3);
+            this.guna2GroupBox2.Controls.Add(this.rb_utrzymanie);
             this.guna2GroupBox2.Controls.Add(this.label11);
             this.guna2GroupBox2.Controls.Add(this.label10);
             this.guna2GroupBox2.Controls.Add(this.label9);
@@ -387,48 +394,48 @@ namespace MicroMeter_Pro
             this.guna2GroupBox2.TabIndex = 4;
             this.guna2GroupBox2.Text = "CEL";
             // 
-            // guna2CustomRadioButton4
+            // rb_redukcja
             // 
-            this.guna2CustomRadioButton4.Animated = true;
-            this.guna2CustomRadioButton4.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton4.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton4.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton4.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton4.CheckedState.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CustomRadioButton4.Location = new System.Drawing.Point(18, 81);
-            this.guna2CustomRadioButton4.Name = "guna2CustomRadioButton4";
-            this.guna2CustomRadioButton4.ShadowDecoration.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton4.TabIndex = 6;
-            this.guna2CustomRadioButton4.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton4.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton4.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton4.UncheckedState.Parent = this.guna2CustomRadioButton4;
-            this.guna2CustomRadioButton4.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
+            this.rb_redukcja.Animated = true;
+            this.rb_redukcja.BackColor = System.Drawing.Color.Transparent;
+            this.rb_redukcja.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_redukcja.CheckedState.BorderThickness = 0;
+            this.rb_redukcja.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_redukcja.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_redukcja.CheckedState.Parent = this.rb_redukcja;
+            this.rb_redukcja.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_redukcja.Location = new System.Drawing.Point(18, 81);
+            this.rb_redukcja.Name = "rb_redukcja";
+            this.rb_redukcja.ShadowDecoration.Parent = this.rb_redukcja;
+            this.rb_redukcja.Size = new System.Drawing.Size(20, 20);
+            this.rb_redukcja.TabIndex = 6;
+            this.rb_redukcja.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_redukcja.UncheckedState.BorderThickness = 2;
+            this.rb_redukcja.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_redukcja.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_redukcja.UncheckedState.Parent = this.rb_redukcja;
+            this.rb_redukcja.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
             // 
-            // guna2CustomRadioButton3
+            // rb_utrzymanie
             // 
-            this.guna2CustomRadioButton3.Animated = true;
-            this.guna2CustomRadioButton3.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton3.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton3.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton3.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton3.CheckedState.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CustomRadioButton3.Location = new System.Drawing.Point(18, 55);
-            this.guna2CustomRadioButton3.Name = "guna2CustomRadioButton3";
-            this.guna2CustomRadioButton3.ShadowDecoration.Parent = this.guna2CustomRadioButton3;
-            this.guna2CustomRadioButton3.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton3.TabIndex = 6;
-            this.guna2CustomRadioButton3.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton3.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton3.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton3.UncheckedState.Parent = this.guna2CustomRadioButton3;
+            this.rb_utrzymanie.Animated = true;
+            this.rb_utrzymanie.BackColor = System.Drawing.Color.Transparent;
+            this.rb_utrzymanie.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_utrzymanie.CheckedState.BorderThickness = 0;
+            this.rb_utrzymanie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_utrzymanie.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_utrzymanie.CheckedState.Parent = this.rb_utrzymanie;
+            this.rb_utrzymanie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_utrzymanie.Location = new System.Drawing.Point(18, 55);
+            this.rb_utrzymanie.Name = "rb_utrzymanie";
+            this.rb_utrzymanie.ShadowDecoration.Parent = this.rb_utrzymanie;
+            this.rb_utrzymanie.Size = new System.Drawing.Size(20, 20);
+            this.rb_utrzymanie.TabIndex = 6;
+            this.rb_utrzymanie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_utrzymanie.UncheckedState.BorderThickness = 2;
+            this.rb_utrzymanie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_utrzymanie.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_utrzymanie.UncheckedState.Parent = this.rb_utrzymanie;
             // 
             // label10
             // 
@@ -440,7 +447,6 @@ namespace MicroMeter_Pro
             this.label10.Size = new System.Drawing.Size(202, 21);
             this.label10.TabIndex = 7;
             this.label10.Text = "Redukcja tkanki tłuszczowej";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label9
             // 
@@ -463,29 +469,28 @@ namespace MicroMeter_Pro
             this.label11.Size = new System.Drawing.Size(60, 21);
             this.label11.TabIndex = 7;
             this.label11.Text = "Przytyć";
-            this.label11.Click += new System.EventHandler(this.label10_Click);
             // 
-            // guna2CustomRadioButton5
+            // rb_tycie
             // 
-            this.guna2CustomRadioButton5.Animated = true;
-            this.guna2CustomRadioButton5.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton5.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton5.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton5.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton5.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton5.CheckedState.Parent = this.guna2CustomRadioButton5;
-            this.guna2CustomRadioButton5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CustomRadioButton5.Location = new System.Drawing.Point(18, 107);
-            this.guna2CustomRadioButton5.Name = "guna2CustomRadioButton5";
-            this.guna2CustomRadioButton5.ShadowDecoration.Parent = this.guna2CustomRadioButton5;
-            this.guna2CustomRadioButton5.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton5.TabIndex = 6;
-            this.guna2CustomRadioButton5.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton5.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton5.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton5.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton5.UncheckedState.Parent = this.guna2CustomRadioButton5;
-            this.guna2CustomRadioButton5.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
+            this.rb_tycie.Animated = true;
+            this.rb_tycie.BackColor = System.Drawing.Color.Transparent;
+            this.rb_tycie.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_tycie.CheckedState.BorderThickness = 0;
+            this.rb_tycie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_tycie.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_tycie.CheckedState.Parent = this.rb_tycie;
+            this.rb_tycie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_tycie.Location = new System.Drawing.Point(18, 107);
+            this.rb_tycie.Name = "rb_tycie";
+            this.rb_tycie.ShadowDecoration.Parent = this.rb_tycie;
+            this.rb_tycie.Size = new System.Drawing.Size(20, 20);
+            this.rb_tycie.TabIndex = 6;
+            this.rb_tycie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_tycie.UncheckedState.BorderThickness = 2;
+            this.rb_tycie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_tycie.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_tycie.UncheckedState.Parent = this.rb_tycie;
+            this.rb_tycie.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
             // 
             // label12
             // 
@@ -497,33 +502,39 @@ namespace MicroMeter_Pro
             this.label12.Size = new System.Drawing.Size(177, 21);
             this.label12.TabIndex = 7;
             this.label12.Text = "Wielka masa mięśniowa";
-            this.label12.Click += new System.EventHandler(this.label10_Click);
             // 
-            // guna2CustomRadioButton6
+            // rb_miesniowa
             // 
-            this.guna2CustomRadioButton6.Animated = true;
-            this.guna2CustomRadioButton6.BackColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton6.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton6.CheckedState.BorderThickness = 0;
-            this.guna2CustomRadioButton6.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.guna2CustomRadioButton6.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.guna2CustomRadioButton6.CheckedState.Parent = this.guna2CustomRadioButton6;
-            this.guna2CustomRadioButton6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.guna2CustomRadioButton6.Location = new System.Drawing.Point(18, 133);
-            this.guna2CustomRadioButton6.Name = "guna2CustomRadioButton6";
-            this.guna2CustomRadioButton6.ShadowDecoration.Parent = this.guna2CustomRadioButton6;
-            this.guna2CustomRadioButton6.Size = new System.Drawing.Size(20, 20);
-            this.guna2CustomRadioButton6.TabIndex = 6;
-            this.guna2CustomRadioButton6.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.guna2CustomRadioButton6.UncheckedState.BorderThickness = 2;
-            this.guna2CustomRadioButton6.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton6.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.guna2CustomRadioButton6.UncheckedState.Parent = this.guna2CustomRadioButton6;
-            this.guna2CustomRadioButton6.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
+            this.rb_miesniowa.Animated = true;
+            this.rb_miesniowa.BackColor = System.Drawing.Color.Transparent;
+            this.rb_miesniowa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_miesniowa.CheckedState.BorderThickness = 0;
+            this.rb_miesniowa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_miesniowa.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_miesniowa.CheckedState.Parent = this.rb_miesniowa;
+            this.rb_miesniowa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_miesniowa.Location = new System.Drawing.Point(18, 133);
+            this.rb_miesniowa.Name = "rb_miesniowa";
+            this.rb_miesniowa.ShadowDecoration.Parent = this.rb_miesniowa;
+            this.rb_miesniowa.Size = new System.Drawing.Size(20, 20);
+            this.rb_miesniowa.TabIndex = 6;
+            this.rb_miesniowa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_miesniowa.UncheckedState.BorderThickness = 2;
+            this.rb_miesniowa.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_miesniowa.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_miesniowa.UncheckedState.Parent = this.rb_miesniowa;
+            this.rb_miesniowa.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
             // 
             // guna2GroupBox3
             // 
+            this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.guna2GroupBox3.BorderRadius = 5;
+            this.guna2GroupBox3.Controls.Add(this.label15);
+            this.guna2GroupBox3.Controls.Add(this.label14);
+            this.guna2GroupBox3.Controls.Add(this.label16_BMI);
+            this.guna2GroupBox3.Controls.Add(this.label16_cpm);
+            this.guna2GroupBox3.Controls.Add(this.label16_ppm);
+            this.guna2GroupBox3.Controls.Add(this.label13);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.LimeGreen;
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
@@ -535,33 +546,105 @@ namespace MicroMeter_Pro
             this.guna2GroupBox3.TabIndex = 5;
             this.guna2GroupBox3.Text = "WYNIKI";
             // 
-            // guna2Button1
+            // button_wyczysc
             // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.CheckedState.Parent = this.guna2Button1;
-            this.guna2Button1.CustomImages.Parent = this.guna2Button1;
-            this.guna2Button1.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.HoverState.Parent = this.guna2Button1;
-            this.guna2Button1.Location = new System.Drawing.Point(638, 12);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.ShadowDecoration.Parent = this.guna2Button1;
-            this.guna2Button1.Size = new System.Drawing.Size(105, 45);
-            this.guna2Button1.TabIndex = 6;
-            this.guna2Button1.Text = "WYCZYŚĆ DANE";
+            this.button_wyczysc.BorderRadius = 5;
+            this.button_wyczysc.CheckedState.Parent = this.button_wyczysc;
+            this.button_wyczysc.CustomImages.Parent = this.button_wyczysc;
+            this.button_wyczysc.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.button_wyczysc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_wyczysc.ForeColor = System.Drawing.Color.White;
+            this.button_wyczysc.HoverState.Parent = this.button_wyczysc;
+            this.button_wyczysc.Location = new System.Drawing.Point(638, 12);
+            this.button_wyczysc.Name = "button_wyczysc";
+            this.button_wyczysc.ShadowDecoration.Parent = this.button_wyczysc;
+            this.button_wyczysc.Size = new System.Drawing.Size(105, 45);
+            this.button_wyczysc.TabIndex = 6;
+            this.button_wyczysc.Text = "WYCZYŚĆ DANE";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(20, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "PPM = ";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(20, 105);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 25);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "CPM = ";
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.BackColor = System.Drawing.Color.Transparent;
+            this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(20, 150);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(68, 25);
+            this.label15.TabIndex = 0;
+            this.label15.Text = "BMI = ";
+            // 
+            // label16_ppm
+            // 
+            this.label16_ppm.AutoSize = true;
+            this.label16_ppm.BackColor = System.Drawing.Color.Transparent;
+            this.label16_ppm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16_ppm.ForeColor = System.Drawing.Color.Black;
+            this.label16_ppm.Location = new System.Drawing.Point(100, 60);
+            this.label16_ppm.Name = "label16_ppm";
+            this.label16_ppm.Size = new System.Drawing.Size(20, 25);
+            this.label16_ppm.TabIndex = 0;
+            this.label16_ppm.Text = "-";
+            // 
+            // label16_cpm
+            // 
+            this.label16_cpm.AutoSize = true;
+            this.label16_cpm.BackColor = System.Drawing.Color.Transparent;
+            this.label16_cpm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16_cpm.ForeColor = System.Drawing.Color.Black;
+            this.label16_cpm.Location = new System.Drawing.Point(101, 105);
+            this.label16_cpm.Name = "label16_cpm";
+            this.label16_cpm.Size = new System.Drawing.Size(20, 25);
+            this.label16_cpm.TabIndex = 0;
+            this.label16_cpm.Text = "-";
+            // 
+            // label16_BMI
+            // 
+            this.label16_BMI.AutoSize = true;
+            this.label16_BMI.BackColor = System.Drawing.Color.Transparent;
+            this.label16_BMI.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16_BMI.ForeColor = System.Drawing.Color.Black;
+            this.label16_BMI.Location = new System.Drawing.Point(100, 150);
+            this.label16_BMI.Name = "label16_BMI";
+            this.label16_BMI.Size = new System.Drawing.Size(20, 25);
+            this.label16_BMI.TabIndex = 0;
+            this.label16_BMI.Text = "-";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DodgerBlue;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(753, 499);
-            this.Controls.Add(this.guna2Button1);
+            this.Controls.Add(this.button_wyczysc);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
-            this.Controls.Add(this.guna2ComboBox2);
-            this.Controls.Add(this.guna2ComboBox1);
+            this.Controls.Add(this.cbox_pal);
+            this.Controls.Add(this.cbox_wzor);
             this.Controls.Add(this.guna2HtmlLabel1);
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.label8);
@@ -574,6 +657,8 @@ namespace MicroMeter_Pro
             this.guna2GroupBox1.PerformLayout();
             this.guna2GroupBox2.ResumeLayout(false);
             this.guna2GroupBox2.PerformLayout();
+            this.guna2GroupBox3.ResumeLayout(false);
+            this.guna2GroupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -584,31 +669,37 @@ namespace MicroMeter_Pro
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox1;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton2;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox3;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox2;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rb_female;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rb_male;
+        private Guna.UI2.WinForms.Guna2TextBox tbox_wiek;
+        private Guna.UI2.WinForms.Guna2TextBox tbox_wzrost;
+        private Guna.UI2.WinForms.Guna2TextBox tbox_waga;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private Guna.UI2.WinForms.Guna2HtmlLabel guna2HtmlLabel1;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox cbox_wzor;
         private System.Windows.Forms.Label label7;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox2;
+        private Guna.UI2.WinForms.Guna2ComboBox cbox_pal;
         private System.Windows.Forms.Label label8;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox2;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton4;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton3;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rb_redukcja;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rb_utrzymanie;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label9;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton6;
-        private Guna.UI2.WinForms.Guna2CustomRadioButton guna2CustomRadioButton5;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rb_miesniowa;
+        private Guna.UI2.WinForms.Guna2CustomRadioButton rb_tycie;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private Guna.UI2.WinForms.Guna2GroupBox guna2GroupBox3;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button button_wyczysc;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label16_BMI;
+        private System.Windows.Forms.Label label16_cpm;
+        private System.Windows.Forms.Label label16_ppm;
+        private System.Windows.Forms.Label label13;
     }
 }
 
