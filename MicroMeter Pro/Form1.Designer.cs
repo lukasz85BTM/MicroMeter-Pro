@@ -47,22 +47,22 @@ namespace MicroMeter_Pro
             this.cbox_pal = new Guna.UI2.WinForms.Guna2ComboBox();
             this.label8 = new System.Windows.Forms.Label();
             this.guna2GroupBox2 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.rb_miesniowa = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.rb_tycie = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.rb_redukcja = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label12 = new System.Windows.Forms.Label();
             this.rb_utrzymanie = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.label11 = new System.Windows.Forms.Label();
-            this.rb_tycie = new Guna.UI2.WinForms.Guna2CustomRadioButton();
-            this.label12 = new System.Windows.Forms.Label();
-            this.rb_miesniowa = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
-            this.button_wyczysc = new Guna.UI2.WinForms.Guna2Button();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.label16_ppm = new System.Windows.Forms.Label();
-            this.label16_cpm = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.label16_BMI = new System.Windows.Forms.Label();
+            this.label16_cpm = new System.Windows.Forms.Label();
+            this.label16_ppm = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.button_wyczysc = new Guna.UI2.WinForms.Guna2Button();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -89,7 +89,7 @@ namespace MicroMeter_Pro
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 64);
             this.guna2GroupBox1.Name = "guna2GroupBox1";
             this.guna2GroupBox1.ShadowDecoration.Parent = this.guna2GroupBox1;
-            this.guna2GroupBox1.Size = new System.Drawing.Size(300, 239);
+            this.guna2GroupBox1.Size = new System.Drawing.Size(285, 239);
             this.guna2GroupBox1.TabIndex = 0;
             this.guna2GroupBox1.Text = "DANE UŻYTKOWNIKA";
             // 
@@ -98,7 +98,7 @@ namespace MicroMeter_Pro
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(225, 202);
+            this.label6.Location = new System.Drawing.Point(200, 201);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 15);
             this.label6.TabIndex = 7;
@@ -109,7 +109,7 @@ namespace MicroMeter_Pro
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(126, 202);
+            this.label5.Location = new System.Drawing.Point(101, 201);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
             this.label5.TabIndex = 7;
@@ -125,7 +125,7 @@ namespace MicroMeter_Pro
             this.rb_female.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rb_female.CheckedState.Parent = this.rb_female;
             this.rb_female.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_female.Location = new System.Drawing.Point(204, 200);
+            this.rb_female.Location = new System.Drawing.Point(179, 199);
             this.rb_female.Name = "rb_female";
             this.rb_female.ShadowDecoration.Parent = this.rb_female;
             this.rb_female.Size = new System.Drawing.Size(20, 20);
@@ -135,6 +135,7 @@ namespace MicroMeter_Pro
             this.rb_female.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rb_female.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rb_female.UncheckedState.Parent = this.rb_female;
+            this.rb_female.CheckedChanged += new System.EventHandler(this.rb_female_CheckedChanged);
             // 
             // rb_male
             // 
@@ -146,7 +147,7 @@ namespace MicroMeter_Pro
             this.rb_male.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rb_male.CheckedState.Parent = this.rb_male;
             this.rb_male.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_male.Location = new System.Drawing.Point(105, 200);
+            this.rb_male.Location = new System.Drawing.Point(80, 199);
             this.rb_male.Name = "rb_male";
             this.rb_male.ShadowDecoration.Parent = this.rb_male;
             this.rb_male.Size = new System.Drawing.Size(20, 20);
@@ -156,6 +157,7 @@ namespace MicroMeter_Pro
             this.rb_male.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rb_male.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rb_male.UncheckedState.Parent = this.rb_male;
+            this.rb_male.CheckedChanged += new System.EventHandler(this.rb_male_CheckedChanged);
             // 
             // tbox_wiek
             // 
@@ -172,7 +174,7 @@ namespace MicroMeter_Pro
             this.tbox_wiek.ForeColor = System.Drawing.Color.Black;
             this.tbox_wiek.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wiek.HoverState.Parent = this.tbox_wiek;
-            this.tbox_wiek.Location = new System.Drawing.Point(107, 147);
+            this.tbox_wiek.Location = new System.Drawing.Point(82, 146);
             this.tbox_wiek.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_wiek.Name = "tbox_wiek";
             this.tbox_wiek.PasswordChar = '\0';
@@ -182,6 +184,7 @@ namespace MicroMeter_Pro
             this.tbox_wiek.Size = new System.Drawing.Size(170, 36);
             this.tbox_wiek.TabIndex = 5;
             this.tbox_wiek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_wiek.TextChanged += new System.EventHandler(this.tbox_wiek_TextChanged);
             // 
             // tbox_wzrost
             // 
@@ -198,7 +201,7 @@ namespace MicroMeter_Pro
             this.tbox_wzrost.ForeColor = System.Drawing.Color.Black;
             this.tbox_wzrost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wzrost.HoverState.Parent = this.tbox_wzrost;
-            this.tbox_wzrost.Location = new System.Drawing.Point(107, 102);
+            this.tbox_wzrost.Location = new System.Drawing.Point(82, 101);
             this.tbox_wzrost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_wzrost.Name = "tbox_wzrost";
             this.tbox_wzrost.PasswordChar = '\0';
@@ -208,6 +211,7 @@ namespace MicroMeter_Pro
             this.tbox_wzrost.Size = new System.Drawing.Size(170, 36);
             this.tbox_wzrost.TabIndex = 4;
             this.tbox_wzrost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_wzrost.TextChanged += new System.EventHandler(this.tbox_wzrost_TextChanged);
             // 
             // tbox_waga
             // 
@@ -224,7 +228,7 @@ namespace MicroMeter_Pro
             this.tbox_waga.ForeColor = System.Drawing.Color.Black;
             this.tbox_waga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_waga.HoverState.Parent = this.tbox_waga;
-            this.tbox_waga.Location = new System.Drawing.Point(107, 57);
+            this.tbox_waga.Location = new System.Drawing.Point(82, 56);
             this.tbox_waga.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_waga.Name = "tbox_waga";
             this.tbox_waga.PasswordChar = '\0';
@@ -234,6 +238,7 @@ namespace MicroMeter_Pro
             this.tbox_waga.Size = new System.Drawing.Size(170, 36);
             this.tbox_waga.TabIndex = 3;
             this.tbox_waga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_waga.TextChanged += new System.EventHandler(this.tbox_waga_TextChanged);
             // 
             // label4
             // 
@@ -313,12 +318,13 @@ namespace MicroMeter_Pro
             "Harris–Benedict",
             "Katch–McArdle"});
             this.cbox_wzor.ItemsAppearance.Parent = this.cbox_wzor;
-            this.cbox_wzor.Location = new System.Drawing.Point(588, 450);
+            this.cbox_wzor.Location = new System.Drawing.Point(579, 451);
             this.cbox_wzor.Name = "cbox_wzor";
             this.cbox_wzor.ShadowDecoration.Parent = this.cbox_wzor;
             this.cbox_wzor.Size = new System.Drawing.Size(151, 36);
             this.cbox_wzor.StartIndex = 0;
             this.cbox_wzor.TabIndex = 2;
+            this.cbox_wzor.SelectedIndexChanged += new System.EventHandler(this.cbox_wzor_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -326,7 +332,7 @@ namespace MicroMeter_Pro
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(584, 426);
+            this.label7.Location = new System.Drawing.Point(575, 427);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(155, 21);
             this.label7.TabIndex = 2;
@@ -353,12 +359,13 @@ namespace MicroMeter_Pro
             "1,8 – duża",
             "2,0+ – bardzo wysoka"});
             this.cbox_pal.ItemsAppearance.Parent = this.cbox_pal;
-            this.cbox_pal.Location = new System.Drawing.Point(322, 450);
+            this.cbox_pal.Location = new System.Drawing.Point(313, 451);
             this.cbox_pal.Name = "cbox_pal";
             this.cbox_pal.ShadowDecoration.Parent = this.cbox_pal;
             this.cbox_pal.Size = new System.Drawing.Size(260, 36);
             this.cbox_pal.StartIndex = 0;
             this.cbox_pal.TabIndex = 3;
+            this.cbox_pal.SelectedIndexChanged += new System.EventHandler(this.cbox_pal_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -366,7 +373,7 @@ namespace MicroMeter_Pro
             this.label8.BackColor = System.Drawing.Color.Transparent;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(318, 426);
+            this.label8.Location = new System.Drawing.Point(309, 427);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(177, 21);
             this.label8.TabIndex = 2;
@@ -390,9 +397,53 @@ namespace MicroMeter_Pro
             this.guna2GroupBox2.Location = new System.Drawing.Point(12, 309);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(300, 177);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(285, 177);
             this.guna2GroupBox2.TabIndex = 4;
             this.guna2GroupBox2.Text = "CEL";
+            // 
+            // rb_miesniowa
+            // 
+            this.rb_miesniowa.Animated = true;
+            this.rb_miesniowa.BackColor = System.Drawing.Color.Transparent;
+            this.rb_miesniowa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_miesniowa.CheckedState.BorderThickness = 0;
+            this.rb_miesniowa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_miesniowa.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_miesniowa.CheckedState.Parent = this.rb_miesniowa;
+            this.rb_miesniowa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_miesniowa.Location = new System.Drawing.Point(18, 133);
+            this.rb_miesniowa.Name = "rb_miesniowa";
+            this.rb_miesniowa.ShadowDecoration.Parent = this.rb_miesniowa;
+            this.rb_miesniowa.Size = new System.Drawing.Size(20, 20);
+            this.rb_miesniowa.TabIndex = 6;
+            this.rb_miesniowa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_miesniowa.UncheckedState.BorderThickness = 2;
+            this.rb_miesniowa.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_miesniowa.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_miesniowa.UncheckedState.Parent = this.rb_miesniowa;
+            this.rb_miesniowa.CheckedChanged += new System.EventHandler(this.rb_miesniowa_CheckedChanged);
+            // 
+            // rb_tycie
+            // 
+            this.rb_tycie.Animated = true;
+            this.rb_tycie.BackColor = System.Drawing.Color.Transparent;
+            this.rb_tycie.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_tycie.CheckedState.BorderThickness = 0;
+            this.rb_tycie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_tycie.CheckedState.InnerColor = System.Drawing.Color.White;
+            this.rb_tycie.CheckedState.Parent = this.rb_tycie;
+            this.rb_tycie.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.rb_tycie.Location = new System.Drawing.Point(18, 107);
+            this.rb_tycie.Name = "rb_tycie";
+            this.rb_tycie.ShadowDecoration.Parent = this.rb_tycie;
+            this.rb_tycie.Size = new System.Drawing.Size(20, 20);
+            this.rb_tycie.TabIndex = 6;
+            this.rb_tycie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
+            this.rb_tycie.UncheckedState.BorderThickness = 2;
+            this.rb_tycie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
+            this.rb_tycie.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
+            this.rb_tycie.UncheckedState.Parent = this.rb_tycie;
+            this.rb_tycie.CheckedChanged += new System.EventHandler(this.rb_tycie_CheckedChanged);
             // 
             // rb_redukcja
             // 
@@ -414,7 +465,18 @@ namespace MicroMeter_Pro
             this.rb_redukcja.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rb_redukcja.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rb_redukcja.UncheckedState.Parent = this.rb_redukcja;
-            this.rb_redukcja.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
+            this.rb_redukcja.CheckedChanged += new System.EventHandler(this.rb_redukcja_CheckedChanged);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(43, 132);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(177, 21);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Wielka masa mięśniowa";
             // 
             // rb_utrzymanie
             // 
@@ -436,6 +498,18 @@ namespace MicroMeter_Pro
             this.rb_utrzymanie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
             this.rb_utrzymanie.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
             this.rb_utrzymanie.UncheckedState.Parent = this.rb_utrzymanie;
+            this.rb_utrzymanie.CheckedChanged += new System.EventHandler(this.rb_utrzymanie_CheckedChanged);
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.BackColor = System.Drawing.Color.Transparent;
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(43, 106);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(60, 21);
+            this.label11.TabIndex = 7;
+            this.label11.Text = "Przytyć";
             // 
             // label10
             // 
@@ -459,72 +533,6 @@ namespace MicroMeter_Pro
             this.label9.TabIndex = 7;
             this.label9.Text = "Utrzymanie Masy";
             // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(43, 106);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(60, 21);
-            this.label11.TabIndex = 7;
-            this.label11.Text = "Przytyć";
-            // 
-            // rb_tycie
-            // 
-            this.rb_tycie.Animated = true;
-            this.rb_tycie.BackColor = System.Drawing.Color.Transparent;
-            this.rb_tycie.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rb_tycie.CheckedState.BorderThickness = 0;
-            this.rb_tycie.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rb_tycie.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rb_tycie.CheckedState.Parent = this.rb_tycie;
-            this.rb_tycie.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_tycie.Location = new System.Drawing.Point(18, 107);
-            this.rb_tycie.Name = "rb_tycie";
-            this.rb_tycie.ShadowDecoration.Parent = this.rb_tycie;
-            this.rb_tycie.Size = new System.Drawing.Size(20, 20);
-            this.rb_tycie.TabIndex = 6;
-            this.rb_tycie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rb_tycie.UncheckedState.BorderThickness = 2;
-            this.rb_tycie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rb_tycie.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rb_tycie.UncheckedState.Parent = this.rb_tycie;
-            this.rb_tycie.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(43, 132);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(177, 21);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Wielka masa mięśniowa";
-            // 
-            // rb_miesniowa
-            // 
-            this.rb_miesniowa.Animated = true;
-            this.rb_miesniowa.BackColor = System.Drawing.Color.Transparent;
-            this.rb_miesniowa.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rb_miesniowa.CheckedState.BorderThickness = 0;
-            this.rb_miesniowa.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.rb_miesniowa.CheckedState.InnerColor = System.Drawing.Color.White;
-            this.rb_miesniowa.CheckedState.Parent = this.rb_miesniowa;
-            this.rb_miesniowa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.rb_miesniowa.Location = new System.Drawing.Point(18, 133);
-            this.rb_miesniowa.Name = "rb_miesniowa";
-            this.rb_miesniowa.ShadowDecoration.Parent = this.rb_miesniowa;
-            this.rb_miesniowa.Size = new System.Drawing.Size(20, 20);
-            this.rb_miesniowa.TabIndex = 6;
-            this.rb_miesniowa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
-            this.rb_miesniowa.UncheckedState.BorderThickness = 2;
-            this.rb_miesniowa.UncheckedState.FillColor = System.Drawing.Color.Transparent;
-            this.rb_miesniowa.UncheckedState.InnerColor = System.Drawing.Color.Transparent;
-            this.rb_miesniowa.UncheckedState.Parent = this.rb_miesniowa;
-            this.rb_miesniowa.CheckedChanged += new System.EventHandler(this.guna2CustomRadioButton4_CheckedChanged);
-            // 
             // guna2GroupBox3
             // 
             this.guna2GroupBox3.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
@@ -539,52 +547,12 @@ namespace MicroMeter_Pro
             this.guna2GroupBox3.FillColor = System.Drawing.Color.Gainsboro;
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
-            this.guna2GroupBox3.Location = new System.Drawing.Point(318, 64);
+            this.guna2GroupBox3.Location = new System.Drawing.Point(303, 64);
             this.guna2GroupBox3.Name = "guna2GroupBox3";
             this.guna2GroupBox3.ShadowDecoration.Parent = this.guna2GroupBox3;
-            this.guna2GroupBox3.Size = new System.Drawing.Size(425, 359);
+            this.guna2GroupBox3.Size = new System.Drawing.Size(427, 359);
             this.guna2GroupBox3.TabIndex = 5;
             this.guna2GroupBox3.Text = "WYNIKI";
-            // 
-            // button_wyczysc
-            // 
-            this.button_wyczysc.BorderRadius = 5;
-            this.button_wyczysc.CheckedState.Parent = this.button_wyczysc;
-            this.button_wyczysc.CustomImages.Parent = this.button_wyczysc;
-            this.button_wyczysc.FillColor = System.Drawing.Color.DeepSkyBlue;
-            this.button_wyczysc.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.button_wyczysc.ForeColor = System.Drawing.Color.White;
-            this.button_wyczysc.HoverState.Parent = this.button_wyczysc;
-            this.button_wyczysc.Location = new System.Drawing.Point(638, 12);
-            this.button_wyczysc.Name = "button_wyczysc";
-            this.button_wyczysc.ShadowDecoration.Parent = this.button_wyczysc;
-            this.button_wyczysc.Size = new System.Drawing.Size(105, 45);
-            this.button_wyczysc.TabIndex = 6;
-            this.button_wyczysc.Text = "WYCZYŚĆ DANE";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(20, 60);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(74, 25);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "PPM = ";
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(20, 105);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(75, 25);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "CPM = ";
             // 
             // label15
             // 
@@ -598,17 +566,29 @@ namespace MicroMeter_Pro
             this.label15.TabIndex = 0;
             this.label15.Text = "BMI = ";
             // 
-            // label16_ppm
+            // label14
             // 
-            this.label16_ppm.AutoSize = true;
-            this.label16_ppm.BackColor = System.Drawing.Color.Transparent;
-            this.label16_ppm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16_ppm.ForeColor = System.Drawing.Color.Black;
-            this.label16_ppm.Location = new System.Drawing.Point(100, 60);
-            this.label16_ppm.Name = "label16_ppm";
-            this.label16_ppm.Size = new System.Drawing.Size(20, 25);
-            this.label16_ppm.TabIndex = 0;
-            this.label16_ppm.Text = "-";
+            this.label14.AutoSize = true;
+            this.label14.BackColor = System.Drawing.Color.Transparent;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(20, 105);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(75, 25);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "CPM = ";
+            // 
+            // label16_BMI
+            // 
+            this.label16_BMI.AutoSize = true;
+            this.label16_BMI.BackColor = System.Drawing.Color.Transparent;
+            this.label16_BMI.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16_BMI.ForeColor = System.Drawing.Color.Black;
+            this.label16_BMI.Location = new System.Drawing.Point(100, 150);
+            this.label16_BMI.Name = "label16_BMI";
+            this.label16_BMI.Size = new System.Drawing.Size(20, 25);
+            this.label16_BMI.TabIndex = 0;
+            this.label16_BMI.Text = "-";
             // 
             // label16_cpm
             // 
@@ -622,24 +602,52 @@ namespace MicroMeter_Pro
             this.label16_cpm.TabIndex = 0;
             this.label16_cpm.Text = "-";
             // 
-            // label16_BMI
+            // label16_ppm
             // 
-            this.label16_BMI.AutoSize = true;
-            this.label16_BMI.BackColor = System.Drawing.Color.Transparent;
-            this.label16_BMI.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16_BMI.ForeColor = System.Drawing.Color.Black;
-            this.label16_BMI.Location = new System.Drawing.Point(100, 150);
-            this.label16_BMI.Name = "label16_BMI";
-            this.label16_BMI.Size = new System.Drawing.Size(20, 25);
-            this.label16_BMI.TabIndex = 0;
-            this.label16_BMI.Text = "-";
+            this.label16_ppm.AutoSize = true;
+            this.label16_ppm.BackColor = System.Drawing.Color.Transparent;
+            this.label16_ppm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16_ppm.ForeColor = System.Drawing.Color.Black;
+            this.label16_ppm.Location = new System.Drawing.Point(100, 60);
+            this.label16_ppm.Name = "label16_ppm";
+            this.label16_ppm.Size = new System.Drawing.Size(20, 25);
+            this.label16_ppm.TabIndex = 0;
+            this.label16_ppm.Text = "-";
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.BackColor = System.Drawing.Color.Transparent;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(20, 60);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(74, 25);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "PPM = ";
+            // 
+            // button_wyczysc
+            // 
+            this.button_wyczysc.BorderRadius = 5;
+            this.button_wyczysc.CheckedState.Parent = this.button_wyczysc;
+            this.button_wyczysc.CustomImages.Parent = this.button_wyczysc;
+            this.button_wyczysc.FillColor = System.Drawing.Color.DeepSkyBlue;
+            this.button_wyczysc.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.button_wyczysc.ForeColor = System.Drawing.Color.White;
+            this.button_wyczysc.HoverState.Parent = this.button_wyczysc;
+            this.button_wyczysc.Location = new System.Drawing.Point(625, 13);
+            this.button_wyczysc.Name = "button_wyczysc";
+            this.button_wyczysc.ShadowDecoration.Parent = this.button_wyczysc;
+            this.button_wyczysc.Size = new System.Drawing.Size(105, 45);
+            this.button_wyczysc.TabIndex = 6;
+            this.button_wyczysc.Text = "WYCZYŚĆ DANE";
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
-            this.ClientSize = new System.Drawing.Size(753, 499);
+            this.ClientSize = new System.Drawing.Size(739, 499);
             this.Controls.Add(this.button_wyczysc);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
@@ -649,8 +657,8 @@ namespace MicroMeter_Pro
             this.Controls.Add(this.guna2GroupBox1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.MaximumSize = new System.Drawing.Size(769, 538);
-            this.MinimumSize = new System.Drawing.Size(769, 538);
+            this.MaximumSize = new System.Drawing.Size(755, 538);
+            this.MinimumSize = new System.Drawing.Size(755, 538);
             this.Name = "Form1";
             this.Text = "MicroMeter Pro";
             this.guna2GroupBox1.ResumeLayout(false);
