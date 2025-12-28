@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.35826.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroMeter Pro", "MicroMeter Pro\MicroMeter Pro.csproj", "{28265F4A-CCAA-49FE-A47D-F2DF44056C86}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28265F4A-CCAA-49FE-A47D-F2DF44056C86}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28265F4A-CCAA-49FE-A47D-F2DF44056C86}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28265F4A-CCAA-49FE-A47D-F2DF44056C86}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28265F4A-CCAA-49FE-A47D-F2DF44056C86}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB850918-7B89-4BF0-AC33-5A2546C3F2A1}
+	EndGlobalSection
+EndGlobal
