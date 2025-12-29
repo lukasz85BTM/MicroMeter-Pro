@@ -18,13 +18,13 @@ namespace MicroMeter_Pro
             InitializeComponent();
             tbox_waga.KeyPress += TylkoLiczbyIZnakDziesietny;
             tbox_wzrost.KeyPress += TylkoLiczbyIZnakDziesietny;
+            button_wyczysc.Click += button_wyczysc_Click;
             UpdateAll();
         }
 
         private void guna2CustomRadioButton4_CheckedChanged(object sender, EventArgs e)
         {
             ObliczCPM();
-
         }
 
         private void ObliczBMI()
@@ -59,7 +59,6 @@ namespace MicroMeter_Pro
 
             label16_BMI.Text = bmi.ToString("0.00");
             InterpretujBMI(bmi);
-
         }
 
         private void TylkoLiczbyIZnakDziesietny(object sender, KeyPressEventArgs e)
@@ -199,29 +198,31 @@ namespace MicroMeter_Pro
                         : (447.593 + 9.247 * waga + 3.098 * wzrost - 4.330 * wiek);
                     break;
 
+                case 2: // Katch–McArdle (wymaga % tkanki tłuszczowej - nie zaimplementowane)
+                    label16_ppm.Text = "Wzór niedostępny";
+                    return;
+
                 default:
                     label16_ppm.Text = "-";
                     return;
             }
 
             label16_ppm.Text = Math.Round(ppm).ToString();
-            
         }
 
         private void rb_male_CheckedChanged(object sender, EventArgs e)
         {
-            ObliczPPM();
-
+            UpdateAll();
         }
 
         private void rb_female_CheckedChanged(object sender, EventArgs e)
         {
-            ObliczPPM();
+            UpdateAll();
         }
 
         private void cbox_wzor_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ObliczPPM();
+            UpdateAll();
         }
 
         private void ObliczCPM()
@@ -230,6 +231,7 @@ namespace MicroMeter_Pro
             if (!double.TryParse(label16_ppm.Text, out double ppm) || ppm <= 0)
             {
                 label16_cpm.Text = "-";
+                label16_cpm.ForeColor = Color.Black;
                 return;
             }
 
@@ -237,6 +239,7 @@ namespace MicroMeter_Pro
             if (cbox_pal.SelectedIndex < 0)
             {
                 label16_cpm.Text = "-";
+                label16_cpm.ForeColor = Color.Black;
                 return;
             }
 
@@ -265,41 +268,184 @@ namespace MicroMeter_Pro
             else
             {
                 label16_cpm.Text = "-";
+                label16_cpm.ForeColor = Color.Black;
                 return;
             }
 
             double cpm = ppm * pal + korekta;
             label16_cpm.Text = Math.Round(cpm).ToString();
+
+            // INTERPRETACJA CPM
+            InterpretujCPM(cpm, ppm, pal, korekta);
+        }
+
+        private void InterpretujCPM(double cpm, double ppm, double pal, int korekta)
+        {
+            // Podstawowa kolorystyka zależna od celu
+            if (rb_redukcja.Checked)
+            {
+                label16_cpm.ForeColor = Color.OrangeRed;
+                label16_cpm.Text += "  (Redukcja -300 kcal)";
+            }
+            else if (rb_tycie.Checked)
+            {
+                label16_cpm.ForeColor = Color.DodgerBlue;
+                label16_cpm.Text += "  (Przyrost +300 kcal)";
+            }
+            else if (rb_miesniowa.Checked)
+            {
+                label16_cpm.ForeColor = Color.MediumPurple;
+                label16_cpm.Text += "  (Masa mięśniowa +500 kcal)";
+            }
+            else if (rb_utrzymanie.Checked)
+            {
+                label16_cpm.ForeColor = Color.LimeGreen;
+                label16_cpm.Text += "  (Utrzymanie)";
+            }
+
+            // Dodatkowe informacje w zależności od wartości CPM
+            if (cpm < 1200)
+            {
+                MessageBox.Show(
+                    "UWAGA: CPM poniżej 1200 kcal jest bardzo niskie!\n" +
+                    "Może być szkodliwe dla zdrowia. Skonsultuj się z dietetykiem.",
+                    "Ostrzeżenie",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning);
+            }
+            else if (cpm > 4000)
+            {
+                MessageBox.Show(
+                    "CPM przekracza 4000 kcal - bardzo wysokie zapotrzebowanie!\n" +
+                    "Upewnij się, że dane są poprawne.",
+                    "Informacja",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Information);
+            }
         }
 
         private void cbox_pal_SelectedIndexChanged(object sender, EventArgs e)
         {
-            ObliczCPM();
-
+            UpdateAll();
         }
 
         private void rb_utrzymanie_CheckedChanged(object sender, EventArgs e)
         {
-            ObliczCPM();
-
+            UpdateAll();
         }
 
         private void rb_redukcja_CheckedChanged(object sender, EventArgs e)
         {
-            ObliczCPM();
-
+            UpdateAll();
         }
 
         private void rb_tycie_CheckedChanged(object sender, EventArgs e)
         {
-            ObliczCPM();
-
+            UpdateAll();
         }
 
         private void rb_miesniowa_CheckedChanged(object sender, EventArgs e)
         {
-            ObliczCPM();
+            UpdateAll();
+        }
 
+        private void button_wyczysc_Click(object sender, EventArgs e)
+        {
+            // Czyszczenie wszystkich pól tekstowych
+            tbox_waga.Clear();
+            tbox_wzrost.Clear();
+            tbox_wiek.Clear();
+
+            // Resetowanie radio buttonów
+            rb_male.Checked = false;
+            rb_female.Checked = false;
+            rb_utrzymanie.Checked = false;
+            rb_redukcja.Checked = false;
+            rb_tycie.Checked = false;
+            rb_miesniowa.Checked = false;
+
+            // Resetowanie comboboxów
+            cbox_wzor.SelectedIndex = 0;
+            cbox_pal.SelectedIndex = 0;
+
+            // Resetowanie wyników
+            label16_ppm.Text = "-";
+            label16_ppm.ForeColor = Color.Black;
+            label16_cpm.Text = "-";
+            label16_cpm.ForeColor = Color.Black;
+            label16_BMI.Text = "-";
+            label16_BMI.ForeColor = Color.Black;
+
+            // Resetowanie makroskładników
+            tb_bialko.Text = "0g (0%)";
+            tb_bialko.ForeColor = Color.Black;
+            tb_tluszcze.Text = "0g (0%)";
+            tb_tluszcze.ForeColor = Color.Black;
+            tb_wegle.Text = "0g (0%)";
+            tb_wegle.ForeColor = Color.Black;
+        }
+
+        private void ObliczMakroskladniki()
+        {
+            // Pobieramy CPM
+            if (!double.TryParse(label16_cpm.Text.Split(' ')[0], out double cpm) || cpm <= 0)
+            {
+                tb_bialko.Text = "0g (0%)";
+                tb_tluszcze.Text = "0g (0%)";
+                tb_wegle.Text = "0g (0%)";
+                return;
+            }
+
+            // Pobieramy procenty z kontrolek (np. NumericUpDown)
+            double procentBialka = (double)num_bialko.Value;
+            double procentTluszczow = (double)num_tluszcze.Value;
+            double procentWeglowodanow = (double)num_wegle.Value;
+
+            // --- WALIDACJA ZAKRESÓW ---
+            if (procentBialka < 15 || procentBialka > 35)
+            {
+                MessageBox.Show("Białko musi być w zakresie 15–35%.");
+                return;
+            }
+
+            if (procentTluszczow < 20 || procentTluszczow > 35)
+            {
+                MessageBox.Show("Tłuszcze muszą być w zakresie 20–35%.");
+                return;
+            }
+
+            if (procentWeglowodanow < 35 || procentWeglowodanow > 60)
+            {
+                MessageBox.Show("Węglowodany muszą być w zakresie 35–60%.");
+                return;
+            }
+
+            // --- SUMA MUSI WYNOSIĆ 100% ---
+            double suma = procentBialka + procentTluszczow + procentWeglowodanow;
+
+            if (Math.Abs(suma - 100) > 0.1)
+            {
+                MessageBox.Show("Suma makroskładników musi wynosić dokładnie 100%.");
+                return;
+            }
+
+            // --- PRZELICZENIA ---
+            double kalorieBialko = cpm * (procentBialka / 100.0);
+            double kalorieTluszcze = cpm * (procentTluszczow / 100.0);
+            double kalorieWeglowodany = cpm * (procentWeglowodanow / 100.0);
+
+            double gramyBialko = kalorieBialko / 4.0;
+            double gramyTluszcze = kalorieTluszcze / 9.0;
+            double gramyWeglowodany = kalorieWeglowodany / 4.0;
+
+            // --- WYNIKI ---
+            tb_bialko.Text = $"{Math.Round(gramyBialko)}g ({procentBialka}%)";
+            tb_tluszcze.Text = $"{Math.Round(gramyTluszcze)}g ({procentTluszczow}%)";
+            tb_wegle.Text = $"{Math.Round(gramyWeglowodany)}g ({procentWeglowodanow}%)";
+
+            tb_bialko.ForeColor = Color.OrangeRed;
+            tb_tluszcze.ForeColor = Color.Gold;
+            tb_wegle.ForeColor = Color.LimeGreen;
         }
 
         private void UpdateAll()
@@ -307,7 +453,7 @@ namespace MicroMeter_Pro
             ObliczBMI();
             ObliczPPM();
             ObliczCPM();
+            ObliczMakroskladniki();
         }
-
     }
 }
