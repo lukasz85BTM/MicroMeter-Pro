@@ -13,25 +13,64 @@ namespace MicroMeter_Pro
 {
     public partial class Form1 : Form
     {
+        private bool _blokadaZmian = false;
+        private Color _defaultTextColor = Color.Black;
+        private string _defaultLabelText = "-";
+
         public Form1()
         {
             InitializeComponent();
             tbox_waga.KeyPress += TylkoLiczbyIZnakDziesietny;
             tbox_wzrost.KeyPress += TylkoLiczbyIZnakDziesietny;
+            tbox_wiek.KeyPress += TylkoLiczbyIZnakDziesietny;
             button_wyczysc.Click += button_wyczysc_Click;
+
+            // Ustaw domyślne wartości
+            cbox_wzor.SelectedIndex = 0;
+            cbox_pal.SelectedIndex = 0;
+            rb_utrzymanie.Checked = true;
+
+            num_bialko.ValueChanged += (s, e) => ObliczMakroskladniki();
+            num_tluszcze.ValueChanged += (s, e) => ObliczMakroskladniki();
+
             UpdateAll();
         }
 
-        private void guna2CustomRadioButton4_CheckedChanged(object sender, EventArgs e)
+        private void TylkoLiczbyIZnakDziesietny(object sender, KeyPressEventArgs e)
         {
-            ObliczCPM();
+            var tb = sender as Guna.UI2.WinForms.Guna2TextBox;
+            if (tb == null)
+                return;
+
+            // Backspace, delete itp. - pozwól na te klawisze
+            if (char.IsControl(e.KeyChar))
+                return;
+
+            // Cyfry - pozwól
+            if (char.IsDigit(e.KeyChar))
+                return;
+
+            // Jeden separator dziesiętny (dla polskiej kultury)
+            char decimalSeparator = CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator[0];
+            if (e.KeyChar == decimalSeparator && !tb.Text.Contains(decimalSeparator))
+            {
+                return;
+            }
+
+            // Alternatywnie pozwól na kropkę jeśli kultura używa przecinka
+            if (decimalSeparator == ',' && e.KeyChar == '.' && !tb.Text.Contains('.') && !tb.Text.Contains(','))
+            {
+                return;
+            }
+
+            // Reszta blokowana
+            e.Handled = true;
         }
 
         private void ObliczBMI()
         {
             double waga = 0;
             double wzrostCm = 0;
-            double wiek = 0;
 
             double.TryParse(tbox_waga.Text,
                 NumberStyles.Any,
@@ -43,14 +82,10 @@ namespace MicroMeter_Pro
                 CultureInfo.CurrentCulture,
                 out wzrostCm);
 
-            double.TryParse(tbox_wiek.Text,
-                NumberStyles.Any,
-                CultureInfo.CurrentCulture,
-                out wiek);
-
             if (waga <= 0 || wzrostCm <= 0)
             {
-                label16_BMI.Text = "0";
+                label16_BMI.Text = _defaultLabelText;
+                label16_BMI.ForeColor = _defaultTextColor;
                 return;
             }
 
@@ -61,58 +96,17 @@ namespace MicroMeter_Pro
             InterpretujBMI(bmi);
         }
 
-        private void TylkoLiczbyIZnakDziesietny(object sender, KeyPressEventArgs e)
-        {
-            var tb = sender as Guna.UI2.WinForms.Guna2TextBox;
-            if (tb == null)
-                return;
-
-            // Backspace, delete itp.
-            if (char.IsControl(e.KeyChar))
-                return;
-
-            // Cyfry
-            if (char.IsDigit(e.KeyChar))
-                return;
-
-            // Jeden separator dziesiętny
-            if ((e.KeyChar == ',' || e.KeyChar == '.') &&
-                !tb.Text.Contains(",") &&
-                !tb.Text.Contains("."))
-            {
-                return;
-            }
-
-            // Reszta blokowana
-            e.Handled = true;
-        }
-
-        private void tbox_waga_TextChanged(object sender, EventArgs e)
-        {
-            ObliczBMI();
-            ObliczPPM();
-        }
-
-        private void tbox_wzrost_TextChanged(object sender, EventArgs e)
-        {
-            ObliczBMI();
-            ObliczPPM();
-        }
-
-        private void tbox_wiek_TextChanged(object sender, EventArgs e)
-        {
-            ObliczBMI();
-            ObliczPPM();
-        }
-
         private void InterpretujBMI(double bmi)
         {
             if (bmi <= 0)
             {
-                label16_BMI.ForeColor = Color.Black;
-                label16_BMI.Text = "0";
+                label16_BMI.Text = _defaultLabelText;
+                label16_BMI.ForeColor = _defaultTextColor;
                 return;
             }
+
+            string bmiText = bmi.ToString("0.00");
+            label16_BMI.Text = bmiText;
 
             if (bmi < 18.5)
             {
@@ -151,17 +145,28 @@ namespace MicroMeter_Pro
             // parsowanie danych
             double waga, wzrost, wiek;
 
-            if (!double.TryParse(tbox_waga.Text, out waga) ||
-                !double.TryParse(tbox_wzrost.Text, out wzrost) ||
-                !double.TryParse(tbox_wiek.Text, out wiek))
+            bool wagaOk = double.TryParse(tbox_waga.Text,
+                NumberStyles.Any,
+                CultureInfo.CurrentCulture,
+                out waga);
+            bool wzrostOk = double.TryParse(tbox_wzrost.Text,
+                NumberStyles.Any,
+                CultureInfo.CurrentCulture,
+                out wzrost);
+            bool wiekOk = double.TryParse(tbox_wiek.Text,
+                NumberStyles.Any,
+                CultureInfo.CurrentCulture,
+                out wiek);
+
+            if (!wagaOk || !wzrostOk || !wiekOk)
             {
-                label16_ppm.Text = "-";
+                label16_ppm.Text = _defaultLabelText;
                 return;
             }
 
             if (waga <= 0 || wzrost <= 0 || wiek <= 0)
             {
-                label16_ppm.Text = "-";
+                label16_ppm.Text = _defaultLabelText;
                 return;
             }
 
@@ -171,75 +176,72 @@ namespace MicroMeter_Pro
 
             if (!isMale && !isFemale)
             {
-                label16_ppm.Text = "-";
+                label16_ppm.Text = _defaultLabelText;
                 return;
             }
 
             // wybrany wzór
             if (cbox_wzor.SelectedIndex < 0)
             {
-                label16_ppm.Text = "-";
+                label16_ppm.Text = _defaultLabelText;
                 return;
             }
 
             double ppm = 0;
 
-            switch (cbox_wzor.SelectedIndex)
+            try
             {
-                case 0: // Mifflin–St Jeor
-                    ppm = isMale
-                        ? (10 * waga + 6.25 * wzrost - 5 * wiek + 5)
-                        : (10 * waga + 6.25 * wzrost - 5 * wiek - 161);
-                    break;
+                switch (cbox_wzor.SelectedIndex)
+                {
+                    case 0: // Mifflin–St Jeor
+                        ppm = isMale
+                            ? (10 * waga + 6.25 * wzrost - 5 * wiek + 5)
+                            : (10 * waga + 6.25 * wzrost - 5 * wiek - 161);
+                        break;
 
-                case 1: // Harris–Benedict
-                    ppm = isMale
-                        ? (88.362 + 13.397 * waga + 4.799 * wzrost - 5.677 * wiek)
-                        : (447.593 + 9.247 * waga + 3.098 * wzrost - 4.330 * wiek);
-                    break;
+                    case 1: // Harris–Benedict
+                        ppm = isMale
+                            ? (88.362 + 13.397 * waga + 4.799 * wzrost - 5.677 * wiek)
+                            : (447.593 + 9.247 * waga + 3.098 * wzrost - 4.330 * wiek);
+                        break;
 
-                case 2: // Katch–McArdle (wymaga % tkanki tłuszczowej - nie zaimplementowane)
-                    label16_ppm.Text = "Wzór niedostępny";
-                    return;
+                    case 2: // Katch–McArdle - pokazujemy ostrzeżenie
+                        // W rzeczywistości potrzebujemy % tkanki tłuszczowej
+                        // Na razie użyjmy Mifflin jako fallback
+                        ppm = isMale
+                            ? (10 * waga + 6.25 * wzrost - 5 * wiek + 5)
+                            : (10 * waga + 6.25 * wzrost - 5 * wiek - 161);
+                        break;
 
-                default:
-                    label16_ppm.Text = "-";
-                    return;
+                    default:
+                        label16_ppm.Text = _defaultLabelText;
+                        return;
+                }
+            }
+            catch (Exception)
+            {
+                label16_ppm.Text = _defaultLabelText;
+                return;
             }
 
             label16_ppm.Text = Math.Round(ppm).ToString();
         }
 
-        private void rb_male_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
-        }
-
-        private void rb_female_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
-        }
-
-        private void cbox_wzor_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
-        }
-
         private void ObliczCPM()
         {
             // najpierw musimy mieć PPM
-            if (!double.TryParse(label16_ppm.Text, out double ppm) || ppm <= 0)
+            if (!double.TryParse(label16_ppm.Text.Split(' ')[0], out double ppm) || ppm <= 0)
             {
-                label16_cpm.Text = "-";
-                label16_cpm.ForeColor = Color.Black;
+                label16_cpm.Text = _defaultLabelText;
+                label16_cpm.ForeColor = _defaultTextColor;
                 return;
             }
 
             // PAL
             if (cbox_pal.SelectedIndex < 0)
             {
-                label16_cpm.Text = "-";
-                label16_cpm.ForeColor = Color.Black;
+                label16_cpm.Text = _defaultLabelText;
+                label16_cpm.ForeColor = _defaultTextColor;
                 return;
             }
 
@@ -256,54 +258,69 @@ namespace MicroMeter_Pro
 
             // cel
             int korekta = 0;
+            string cel = "";
 
             if (rb_redukcja.Checked)
+            {
                 korekta = -300;
+                cel = "Redukcja";
+            }
             else if (rb_tycie.Checked)
+            {
                 korekta = 300;
+                cel = "Przyrost";
+            }
             else if (rb_miesniowa.Checked)
+            {
                 korekta = 500;
+                cel = "Masa mięśniowa";
+            }
             else if (rb_utrzymanie.Checked)
+            {
                 korekta = 0;
+                cel = "Utrzymanie";
+            }
             else
             {
-                label16_cpm.Text = "-";
-                label16_cpm.ForeColor = Color.Black;
+                label16_cpm.Text = _defaultLabelText;
+                label16_cpm.ForeColor = _defaultTextColor;
                 return;
             }
 
             double cpm = ppm * pal + korekta;
-            label16_cpm.Text = Math.Round(cpm).ToString();
 
-            // INTERPRETACJA CPM
-            InterpretujCPM(cpm, ppm, pal, korekta);
+            // Interpretuj CPM
+            InterpretujCPM(cpm, cel);
+
+            // Oblicz makroskładniki
+            ObliczMakroskladniki();
         }
 
-        private void InterpretujCPM(double cpm, double ppm, double pal, int korekta)
+        private void InterpretujCPM(double cpm, string cel)
         {
-            // Podstawowa kolorystyka zależna od celu
-            if (rb_redukcja.Checked)
+            string cpmText = Math.Round(cpm).ToString();
+
+            switch (cel)
             {
-                label16_cpm.ForeColor = Color.OrangeRed;
-                label16_cpm.Text += "  (Redukcja -300 kcal)";
-            }
-            else if (rb_tycie.Checked)
-            {
-                label16_cpm.ForeColor = Color.DodgerBlue;
-                label16_cpm.Text += "  (Przyrost +300 kcal)";
-            }
-            else if (rb_miesniowa.Checked)
-            {
-                label16_cpm.ForeColor = Color.MediumPurple;
-                label16_cpm.Text += "  (Masa mięśniowa +500 kcal)";
-            }
-            else if (rb_utrzymanie.Checked)
-            {
-                label16_cpm.ForeColor = Color.LimeGreen;
-                label16_cpm.Text += "  (Utrzymanie)";
+                case "Redukcja":
+                    label16_cpm.ForeColor = Color.OrangeRed;
+                    label16_cpm.Text = $"{cpmText}  (Redukcja -300 kcal)";
+                    break;
+                case "Przyrost":
+                    label16_cpm.ForeColor = Color.DodgerBlue;
+                    label16_cpm.Text = $"{cpmText}  (Przyrost +300 kcal)";
+                    break;
+                case "Masa mięśniowa":
+                    label16_cpm.ForeColor = Color.MediumPurple;
+                    label16_cpm.Text = $"{cpmText}  (Masa mięśniowa +500 kcal)";
+                    break;
+                case "Utrzymanie":
+                    label16_cpm.ForeColor = Color.LimeGreen;
+                    label16_cpm.Text = $"{cpmText}  (Utrzymanie)";
+                    break;
             }
 
-            // Dodatkowe informacje w zależności od wartości CPM
+            // Dodatkowe ostrzeżenia
             if (cpm < 1200)
             {
                 MessageBox.Show(
@@ -324,29 +341,70 @@ namespace MicroMeter_Pro
             }
         }
 
-        private void cbox_pal_SelectedIndexChanged(object sender, EventArgs e)
+        private void ObliczMakroskladniki()
         {
-            UpdateAll();
-        }
+            if (_blokadaZmian) return;
+            _blokadaZmian = true;
 
-        private void rb_utrzymanie_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
-        }
+            try
+            {
+                // Pobieramy CPM (pierwszą część przed spacją)
+                string cpmText = label16_cpm.Text.Split(' ')[0];
+                if (!double.TryParse(cpmText, out double cpm) || cpm <= 0)
+                {
+                    tb_bialko.Text = "0g (0%)";
+                    tb_tluszcze.Text = "0g (0%)";
+                    tb_wegle.Text = "0g (0%)";
+                    return;
+                }
 
-        private void rb_redukcja_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
-        }
+                // Pobieramy procenty białka i tłuszczu
+                double procentBialka = (double)num_bialko.Value;
+                double procentTluszczow = (double)num_tluszcze.Value;
 
-        private void rb_tycie_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
-        }
+                // Sprawdź, czy suma nie przekracza 100%
+                if (procentBialka + procentTluszczow >= 100)
+                {
+                    procentTluszczow = 100 - procentBialka;
+                    num_tluszcze.Value = (decimal)procentTluszczow;
+                }
 
-        private void rb_miesniowa_CheckedChanged(object sender, EventArgs e)
-        {
-            UpdateAll();
+                // Automatyczne wyliczenie węglowodanów
+                double procentWeglowodanow = 100 - (procentBialka + procentTluszczow);
+
+                // Ustawiamy wartość w kontrolce
+                num_wegle.Value = (decimal)Math.Max(0, procentWeglowodanow);
+
+                // Przeliczenia kalorii
+                double kalorieBialko = cpm * (procentBialka / 100.0);
+                double kalorieTluszcze = cpm * (procentTluszczow / 100.0);
+                double kalorieWeglowodany = cpm * (procentWeglowodanow / 100.0);
+
+                // Przeliczenia gramów
+                double gramyBialko = kalorieBialko / 4.0;
+                double gramyTluszcze = kalorieTluszcze / 9.0;
+                double gramyWeglowodany = kalorieWeglowodany / 4.0;
+
+                // Wyświetlanie wyników
+                tb_bialko.Text = $"{Math.Round(gramyBialko)}g ({procentBialka}%)";
+                tb_tluszcze.Text = $"{Math.Round(gramyTluszcze)}g ({procentTluszczow}%)";
+                tb_wegle.Text = $"{Math.Round(gramyWeglowodany)}g ({procentWeglowodanow}%)";
+
+                tb_bialko.ForeColor = Color.OrangeRed;
+                tb_tluszcze.ForeColor = Color.Gold;
+                tb_wegle.ForeColor = Color.LimeGreen;
+            }
+            catch (Exception)
+            {
+                // W przypadku błędu ustaw domyślne wartości
+                tb_bialko.Text = "0g (0%)";
+                tb_tluszcze.Text = "0g (0%)";
+                tb_wegle.Text = "0g (0%)";
+            }
+            finally
+            {
+                _blokadaZmian = false;
+            }
         }
 
         private void button_wyczysc_Click(object sender, EventArgs e)
@@ -359,7 +417,7 @@ namespace MicroMeter_Pro
             // Resetowanie radio buttonów
             rb_male.Checked = false;
             rb_female.Checked = false;
-            rb_utrzymanie.Checked = false;
+            rb_utrzymanie.Checked = true; // Ustaw domyślny cel
             rb_redukcja.Checked = false;
             rb_tycie.Checked = false;
             rb_miesniowa.Checked = false;
@@ -369,83 +427,25 @@ namespace MicroMeter_Pro
             cbox_pal.SelectedIndex = 0;
 
             // Resetowanie wyników
-            label16_ppm.Text = "-";
-            label16_ppm.ForeColor = Color.Black;
-            label16_cpm.Text = "-";
-            label16_cpm.ForeColor = Color.Black;
-            label16_BMI.Text = "-";
-            label16_BMI.ForeColor = Color.Black;
+            label16_ppm.Text = _defaultLabelText;
+            label16_ppm.ForeColor = _defaultTextColor;
+            label16_cpm.Text = _defaultLabelText;
+            label16_cpm.ForeColor = _defaultTextColor;
+            label16_BMI.Text = _defaultLabelText;
+            label16_BMI.ForeColor = _defaultTextColor;
 
             // Resetowanie makroskładników
             tb_bialko.Text = "0g (0%)";
-            tb_bialko.ForeColor = Color.Black;
+            tb_bialko.ForeColor = _defaultTextColor;
             tb_tluszcze.Text = "0g (0%)";
-            tb_tluszcze.ForeColor = Color.Black;
+            tb_tluszcze.ForeColor = _defaultTextColor;
             tb_wegle.Text = "0g (0%)";
-            tb_wegle.ForeColor = Color.Black;
-        }
+            tb_wegle.ForeColor = _defaultTextColor;
 
-        private void ObliczMakroskladniki()
-        {
-            // Pobieramy CPM
-            if (!double.TryParse(label16_cpm.Text.Split(' ')[0], out double cpm) || cpm <= 0)
-            {
-                tb_bialko.Text = "0g (0%)";
-                tb_tluszcze.Text = "0g (0%)";
-                tb_wegle.Text = "0g (0%)";
-                return;
-            }
-
-            // Pobieramy procenty z kontrolek (np. NumericUpDown)
-            double procentBialka = (double)num_bialko.Value;
-            double procentTluszczow = (double)num_tluszcze.Value;
-            double procentWeglowodanow = (double)num_wegle.Value;
-
-            // --- WALIDACJA ZAKRESÓW ---
-            if (procentBialka < 15 || procentBialka > 35)
-            {
-                MessageBox.Show("Białko musi być w zakresie 15–35%.");
-                return;
-            }
-
-            if (procentTluszczow < 20 || procentTluszczow > 35)
-            {
-                MessageBox.Show("Tłuszcze muszą być w zakresie 20–35%.");
-                return;
-            }
-
-            if (procentWeglowodanow < 35 || procentWeglowodanow > 60)
-            {
-                MessageBox.Show("Węglowodany muszą być w zakresie 35–60%.");
-                return;
-            }
-
-            // --- SUMA MUSI WYNOSIĆ 100% ---
-            double suma = procentBialka + procentTluszczow + procentWeglowodanow;
-
-            if (Math.Abs(suma - 100) > 0.1)
-            {
-                MessageBox.Show("Suma makroskładników musi wynosić dokładnie 100%.");
-                return;
-            }
-
-            // --- PRZELICZENIA ---
-            double kalorieBialko = cpm * (procentBialka / 100.0);
-            double kalorieTluszcze = cpm * (procentTluszczow / 100.0);
-            double kalorieWeglowodany = cpm * (procentWeglowodanow / 100.0);
-
-            double gramyBialko = kalorieBialko / 4.0;
-            double gramyTluszcze = kalorieTluszcze / 9.0;
-            double gramyWeglowodany = kalorieWeglowodany / 4.0;
-
-            // --- WYNIKI ---
-            tb_bialko.Text = $"{Math.Round(gramyBialko)}g ({procentBialka}%)";
-            tb_tluszcze.Text = $"{Math.Round(gramyTluszcze)}g ({procentTluszczow}%)";
-            tb_wegle.Text = $"{Math.Round(gramyWeglowodany)}g ({procentWeglowodanow}%)";
-
-            tb_bialko.ForeColor = Color.OrangeRed;
-            tb_tluszcze.ForeColor = Color.Gold;
-            tb_wegle.ForeColor = Color.LimeGreen;
+            // Resetowanie procentów makroskładników
+            num_bialko.Value = 25;
+            num_tluszcze.Value = 26;
+            num_wegle.Value = 49;
         }
 
         private void UpdateAll()
@@ -453,7 +453,70 @@ namespace MicroMeter_Pro
             ObliczBMI();
             ObliczPPM();
             ObliczCPM();
-            ObliczMakroskladniki();
+            // ObliczMakroskladniki() jest już wywoływane w ObliczCPM()
         }
+
+        #region Event Handlers
+        private void tbox_waga_TextChanged(object sender, EventArgs e)
+        {
+            UpdateAll();
+        }
+
+        private void tbox_wzrost_TextChanged(object sender, EventArgs e)
+        {
+            UpdateAll();
+        }
+
+        private void tbox_wiek_TextChanged(object sender, EventArgs e)
+        {
+            UpdateAll();
+        }
+
+        private void rb_male_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_male.Checked)
+                UpdateAll();
+        }
+
+        private void rb_female_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_female.Checked)
+                UpdateAll();
+        }
+
+        private void cbox_wzor_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateAll();
+        }
+
+        private void cbox_pal_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateAll();
+        }
+
+        private void rb_utrzymanie_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_utrzymanie.Checked)
+                UpdateAll();
+        }
+
+        private void rb_redukcja_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_redukcja.Checked)
+                UpdateAll();
+        }
+
+        private void rb_tycie_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_tycie.Checked)
+                UpdateAll();
+        }
+
+        private void rb_miesniowa_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rb_miesniowa.Checked)
+                UpdateAll();
+        }
+        #endregion
     }
 }
