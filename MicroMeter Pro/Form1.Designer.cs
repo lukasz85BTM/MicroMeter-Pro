@@ -35,7 +35,6 @@ namespace MicroMeter_Pro
             this.rb_female = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.rb_male = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.tbox_wiek = new Guna.UI2.WinForms.Guna2TextBox();
-            this.tbox_wiek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TylkoLiczbyIZnakDziesietny);
             this.tbox_wzrost = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbox_waga = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -57,6 +56,17 @@ namespace MicroMeter_Pro
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.guna2GroupBox3 = new Guna.UI2.WinForms.Guna2GroupBox();
+            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
+            this.num_wegle = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.num_tluszcze = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.num_bialko = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label16 = new System.Windows.Forms.Label();
+            this.tb_bialko = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tb_tluszcze = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.tb_wegle = new System.Windows.Forms.Label();
+            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label16_BMI = new System.Windows.Forms.Label();
@@ -64,24 +74,15 @@ namespace MicroMeter_Pro
             this.label16_ppm = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button_wyczysc = new Guna.UI2.WinForms.Guna2Button();
-            this.tb_bialko = new System.Windows.Forms.Label();
-            this.tb_tluszcze = new System.Windows.Forms.Label();
-            this.tb_wegle = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.guna2Separator1 = new Guna.UI2.WinForms.Guna2Separator();
-            this.label17 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.guna2GradientPanel1 = new Guna.UI2.WinForms.Guna2GradientPanel();
-            this.num_bialko = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.num_tluszcze = new Guna.UI2.WinForms.Guna2NumericUpDown();
-            this.num_wegle = new Guna.UI2.WinForms.Guna2NumericUpDown();
+            this.label19_ffm = new System.Windows.Forms.Label();
+            this.tbox_fat = new Guna.UI2.WinForms.Guna2TextBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
             this.guna2GradientPanel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bialko)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_tluszcze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_wegle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_tluszcze)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_bialko)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
@@ -91,10 +92,12 @@ namespace MicroMeter_Pro
             this.guna2GroupBox1.Controls.Add(this.label5);
             this.guna2GroupBox1.Controls.Add(this.rb_female);
             this.guna2GroupBox1.Controls.Add(this.rb_male);
+            this.guna2GroupBox1.Controls.Add(this.tbox_fat);
             this.guna2GroupBox1.Controls.Add(this.tbox_wiek);
             this.guna2GroupBox1.Controls.Add(this.tbox_wzrost);
             this.guna2GroupBox1.Controls.Add(this.tbox_waga);
             this.guna2GroupBox1.Controls.Add(this.label4);
+            this.guna2GroupBox1.Controls.Add(this.label19_ffm);
             this.guna2GroupBox1.Controls.Add(this.label3);
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.label1);
@@ -135,9 +138,9 @@ namespace MicroMeter_Pro
             // 
             this.rb_female.Animated = true;
             this.rb_female.BackColor = System.Drawing.Color.Transparent;
-            this.rb_female.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_female.CheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.rb_female.CheckedState.BorderThickness = 0;
-            this.rb_female.CheckedState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.rb_female.CheckedState.FillColor = System.Drawing.Color.Red;
             this.rb_female.CheckedState.InnerColor = System.Drawing.Color.White;
             this.rb_female.CheckedState.Parent = this.rb_female;
             this.rb_female.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -145,7 +148,7 @@ namespace MicroMeter_Pro
             this.rb_female.Name = "rb_female";
             this.rb_female.ShadowDecoration.Parent = this.rb_female;
             this.rb_female.Size = new System.Drawing.Size(20, 20);
-            this.rb_female.TabIndex = 6;
+            this.rb_female.TabIndex = 5;
             this.rb_female.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rb_female.UncheckedState.BorderThickness = 2;
             this.rb_female.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -167,7 +170,7 @@ namespace MicroMeter_Pro
             this.rb_male.Name = "rb_male";
             this.rb_male.ShadowDecoration.Parent = this.rb_male;
             this.rb_male.Size = new System.Drawing.Size(20, 20);
-            this.rb_male.TabIndex = 6;
+            this.rb_male.TabIndex = 4;
             this.rb_male.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rb_male.UncheckedState.BorderThickness = 2;
             this.rb_male.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -190,17 +193,18 @@ namespace MicroMeter_Pro
             this.tbox_wiek.ForeColor = System.Drawing.Color.Black;
             this.tbox_wiek.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wiek.HoverState.Parent = this.tbox_wiek;
-            this.tbox_wiek.Location = new System.Drawing.Point(82, 146);
+            this.tbox_wiek.Location = new System.Drawing.Point(80, 119);
             this.tbox_wiek.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_wiek.Name = "tbox_wiek";
             this.tbox_wiek.PasswordChar = '\0';
             this.tbox_wiek.PlaceholderText = "lat";
             this.tbox_wiek.SelectedText = "";
             this.tbox_wiek.ShadowDecoration.Parent = this.tbox_wiek;
-            this.tbox_wiek.Size = new System.Drawing.Size(170, 36);
-            this.tbox_wiek.TabIndex = 5;
+            this.tbox_wiek.Size = new System.Drawing.Size(99, 30);
+            this.tbox_wiek.TabIndex = 2;
             this.tbox_wiek.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbox_wiek.TextChanged += new System.EventHandler(this.tbox_wiek_TextChanged);
+            this.tbox_wiek.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TylkoLiczbyIZnakDziesietny);
             // 
             // tbox_wzrost
             // 
@@ -217,15 +221,15 @@ namespace MicroMeter_Pro
             this.tbox_wzrost.ForeColor = System.Drawing.Color.Black;
             this.tbox_wzrost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wzrost.HoverState.Parent = this.tbox_wzrost;
-            this.tbox_wzrost.Location = new System.Drawing.Point(82, 101);
+            this.tbox_wzrost.Location = new System.Drawing.Point(80, 84);
             this.tbox_wzrost.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_wzrost.Name = "tbox_wzrost";
             this.tbox_wzrost.PasswordChar = '\0';
             this.tbox_wzrost.PlaceholderText = "centymetry";
             this.tbox_wzrost.SelectedText = "";
             this.tbox_wzrost.ShadowDecoration.Parent = this.tbox_wzrost;
-            this.tbox_wzrost.Size = new System.Drawing.Size(170, 36);
-            this.tbox_wzrost.TabIndex = 4;
+            this.tbox_wzrost.Size = new System.Drawing.Size(99, 30);
+            this.tbox_wzrost.TabIndex = 1;
             this.tbox_wzrost.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbox_wzrost.TextChanged += new System.EventHandler(this.tbox_wzrost_TextChanged);
             // 
@@ -244,15 +248,15 @@ namespace MicroMeter_Pro
             this.tbox_waga.ForeColor = System.Drawing.Color.Black;
             this.tbox_waga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_waga.HoverState.Parent = this.tbox_waga;
-            this.tbox_waga.Location = new System.Drawing.Point(82, 56);
+            this.tbox_waga.Location = new System.Drawing.Point(80, 49);
             this.tbox_waga.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tbox_waga.Name = "tbox_waga";
             this.tbox_waga.PasswordChar = '\0';
             this.tbox_waga.PlaceholderText = "kilogramy";
             this.tbox_waga.SelectedText = "";
             this.tbox_waga.ShadowDecoration.Parent = this.tbox_waga;
-            this.tbox_waga.Size = new System.Drawing.Size(170, 36);
-            this.tbox_waga.TabIndex = 3;
+            this.tbox_waga.Size = new System.Drawing.Size(99, 30);
+            this.tbox_waga.TabIndex = 0;
             this.tbox_waga.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbox_waga.TextChanged += new System.EventHandler(this.tbox_waga_TextChanged);
             // 
@@ -274,7 +278,7 @@ namespace MicroMeter_Pro
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(13, 153);
+            this.label3.Location = new System.Drawing.Point(14, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 21);
             this.label3.TabIndex = 2;
@@ -286,7 +290,7 @@ namespace MicroMeter_Pro
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(13, 108);
+            this.label2.Location = new System.Drawing.Point(14, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 21);
             this.label2.TabIndex = 2;
@@ -298,7 +302,7 @@ namespace MicroMeter_Pro
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(13, 63);
+            this.label1.Location = new System.Drawing.Point(14, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 2;
@@ -339,7 +343,7 @@ namespace MicroMeter_Pro
             this.cbox_wzor.ShadowDecoration.Parent = this.cbox_wzor;
             this.cbox_wzor.Size = new System.Drawing.Size(151, 36);
             this.cbox_wzor.StartIndex = 0;
-            this.cbox_wzor.TabIndex = 2;
+            this.cbox_wzor.TabIndex = 1;
             this.cbox_wzor.SelectedIndexChanged += new System.EventHandler(this.cbox_wzor_SelectedIndexChanged);
             // 
             // label7
@@ -380,7 +384,7 @@ namespace MicroMeter_Pro
             this.cbox_pal.ShadowDecoration.Parent = this.cbox_pal;
             this.cbox_pal.Size = new System.Drawing.Size(260, 36);
             this.cbox_pal.StartIndex = 0;
-            this.cbox_pal.TabIndex = 3;
+            this.cbox_pal.TabIndex = 0;
             this.cbox_pal.SelectedIndexChanged += new System.EventHandler(this.cbox_pal_SelectedIndexChanged);
             // 
             // label8
@@ -431,7 +435,7 @@ namespace MicroMeter_Pro
             this.rb_miesniowa.Name = "rb_miesniowa";
             this.rb_miesniowa.ShadowDecoration.Parent = this.rb_miesniowa;
             this.rb_miesniowa.Size = new System.Drawing.Size(20, 20);
-            this.rb_miesniowa.TabIndex = 6;
+            this.rb_miesniowa.TabIndex = 3;
             this.rb_miesniowa.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rb_miesniowa.UncheckedState.BorderThickness = 2;
             this.rb_miesniowa.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -453,7 +457,7 @@ namespace MicroMeter_Pro
             this.rb_tycie.Name = "rb_tycie";
             this.rb_tycie.ShadowDecoration.Parent = this.rb_tycie;
             this.rb_tycie.Size = new System.Drawing.Size(20, 20);
-            this.rb_tycie.TabIndex = 6;
+            this.rb_tycie.TabIndex = 2;
             this.rb_tycie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rb_tycie.UncheckedState.BorderThickness = 2;
             this.rb_tycie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -475,7 +479,7 @@ namespace MicroMeter_Pro
             this.rb_redukcja.Name = "rb_redukcja";
             this.rb_redukcja.ShadowDecoration.Parent = this.rb_redukcja;
             this.rb_redukcja.Size = new System.Drawing.Size(20, 20);
-            this.rb_redukcja.TabIndex = 6;
+            this.rb_redukcja.TabIndex = 1;
             this.rb_redukcja.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rb_redukcja.UncheckedState.BorderThickness = 2;
             this.rb_redukcja.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -508,7 +512,7 @@ namespace MicroMeter_Pro
             this.rb_utrzymanie.Name = "rb_utrzymanie";
             this.rb_utrzymanie.ShadowDecoration.Parent = this.rb_utrzymanie;
             this.rb_utrzymanie.Size = new System.Drawing.Size(20, 20);
-            this.rb_utrzymanie.TabIndex = 6;
+            this.rb_utrzymanie.TabIndex = 0;
             this.rb_utrzymanie.UncheckedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(125)))), ((int)(((byte)(137)))), ((int)(((byte)(149)))));
             this.rb_utrzymanie.UncheckedState.BorderThickness = 2;
             this.rb_utrzymanie.UncheckedState.FillColor = System.Drawing.Color.Transparent;
@@ -571,6 +575,212 @@ namespace MicroMeter_Pro
             this.guna2GroupBox3.Size = new System.Drawing.Size(427, 359);
             this.guna2GroupBox3.TabIndex = 5;
             this.guna2GroupBox3.Text = "WYNIKI";
+            // 
+            // guna2GradientPanel1
+            // 
+            this.guna2GradientPanel1.BackColor = System.Drawing.Color.DimGray;
+            this.guna2GradientPanel1.BorderRadius = 5;
+            this.guna2GradientPanel1.Controls.Add(this.num_wegle);
+            this.guna2GradientPanel1.Controls.Add(this.num_tluszcze);
+            this.guna2GradientPanel1.Controls.Add(this.num_bialko);
+            this.guna2GradientPanel1.Controls.Add(this.label16);
+            this.guna2GradientPanel1.Controls.Add(this.tb_bialko);
+            this.guna2GradientPanel1.Controls.Add(this.label18);
+            this.guna2GradientPanel1.Controls.Add(this.tb_tluszcze);
+            this.guna2GradientPanel1.Controls.Add(this.label17);
+            this.guna2GradientPanel1.Controls.Add(this.tb_wegle);
+            this.guna2GradientPanel1.Location = new System.Drawing.Point(10, 204);
+            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
+            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
+            this.guna2GradientPanel1.Size = new System.Drawing.Size(405, 142);
+            this.guna2GradientPanel1.TabIndex = 4;
+            // 
+            // num_wegle
+            // 
+            this.num_wegle.BackColor = System.Drawing.Color.Transparent;
+            this.num_wegle.BorderRadius = 5;
+            this.num_wegle.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num_wegle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.num_wegle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.num_wegle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.num_wegle.DisabledState.Parent = this.num_wegle;
+            this.num_wegle.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.num_wegle.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num_wegle.Enabled = false;
+            this.num_wegle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.num_wegle.FocusedState.Parent = this.num_wegle;
+            this.num_wegle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.num_wegle.ForeColor = System.Drawing.Color.Black;
+            this.num_wegle.Location = new System.Drawing.Point(324, 95);
+            this.num_wegle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.num_wegle.Maximum = new decimal(new int[] {
+            65,
+            0,
+            0,
+            0});
+            this.num_wegle.Name = "num_wegle";
+            this.num_wegle.ShadowDecoration.Parent = this.num_wegle;
+            this.num_wegle.Size = new System.Drawing.Size(74, 30);
+            this.num_wegle.TabIndex = 2;
+            this.num_wegle.UpDownButtonBorderVisible = false;
+            this.num_wegle.Value = new decimal(new int[] {
+            49,
+            0,
+            0,
+            0});
+            // 
+            // num_tluszcze
+            // 
+            this.num_tluszcze.BackColor = System.Drawing.Color.Transparent;
+            this.num_tluszcze.BorderRadius = 5;
+            this.num_tluszcze.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num_tluszcze.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.num_tluszcze.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.num_tluszcze.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.num_tluszcze.DisabledState.Parent = this.num_tluszcze;
+            this.num_tluszcze.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.num_tluszcze.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num_tluszcze.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.num_tluszcze.FocusedState.Parent = this.num_tluszcze;
+            this.num_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.num_tluszcze.ForeColor = System.Drawing.Color.Black;
+            this.num_tluszcze.Location = new System.Drawing.Point(324, 53);
+            this.num_tluszcze.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.num_tluszcze.Maximum = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            this.num_tluszcze.Minimum = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            this.num_tluszcze.Name = "num_tluszcze";
+            this.num_tluszcze.ShadowDecoration.Parent = this.num_tluszcze;
+            this.num_tluszcze.Size = new System.Drawing.Size(74, 30);
+            this.num_tluszcze.TabIndex = 1;
+            this.num_tluszcze.Value = new decimal(new int[] {
+            26,
+            0,
+            0,
+            0});
+            // 
+            // num_bialko
+            // 
+            this.num_bialko.BackColor = System.Drawing.Color.Transparent;
+            this.num_bialko.BorderRadius = 5;
+            this.num_bialko.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.num_bialko.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.num_bialko.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.num_bialko.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.num_bialko.DisabledState.Parent = this.num_bialko;
+            this.num_bialko.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
+            this.num_bialko.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num_bialko.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.num_bialko.FocusedState.Parent = this.num_bialko;
+            this.num_bialko.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.num_bialko.ForeColor = System.Drawing.Color.Black;
+            this.num_bialko.Location = new System.Drawing.Point(324, 11);
+            this.num_bialko.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.num_bialko.Maximum = new decimal(new int[] {
+            35,
+            0,
+            0,
+            0});
+            this.num_bialko.Minimum = new decimal(new int[] {
+            15,
+            0,
+            0,
+            0});
+            this.num_bialko.Name = "num_bialko";
+            this.num_bialko.ShadowDecoration.Parent = this.num_bialko;
+            this.num_bialko.Size = new System.Drawing.Size(74, 30);
+            this.num_bialko.TabIndex = 0;
+            this.num_bialko.Value = new decimal(new int[] {
+            25,
+            0,
+            0,
+            0});
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.BackColor = System.Drawing.Color.Transparent;
+            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.ForeColor = System.Drawing.Color.White;
+            this.label16.Location = new System.Drawing.Point(13, 14);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(59, 21);
+            this.label16.TabIndex = 2;
+            this.label16.Text = "Białko :";
+            // 
+            // tb_bialko
+            // 
+            this.tb_bialko.AutoSize = true;
+            this.tb_bialko.BackColor = System.Drawing.Color.Transparent;
+            this.tb_bialko.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb_bialko.ForeColor = System.Drawing.Color.Black;
+            this.tb_bialko.Location = new System.Drawing.Point(78, 14);
+            this.tb_bialko.Name = "tb_bialko";
+            this.tb_bialko.Size = new System.Drawing.Size(28, 21);
+            this.tb_bialko.TabIndex = 1;
+            this.tb_bialko.Text = "---";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.BackColor = System.Drawing.Color.Transparent;
+            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label18.ForeColor = System.Drawing.Color.White;
+            this.label18.Location = new System.Drawing.Point(13, 98);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(116, 21);
+            this.label18.TabIndex = 2;
+            this.label18.Text = "Węglowodany :";
+            // 
+            // tb_tluszcze
+            // 
+            this.tb_tluszcze.AutoSize = true;
+            this.tb_tluszcze.BackColor = System.Drawing.Color.Transparent;
+            this.tb_tluszcze.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb_tluszcze.Location = new System.Drawing.Point(93, 56);
+            this.tb_tluszcze.Name = "tb_tluszcze";
+            this.tb_tluszcze.Size = new System.Drawing.Size(28, 21);
+            this.tb_tluszcze.TabIndex = 1;
+            this.tb_tluszcze.Text = "---";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.BackColor = System.Drawing.Color.Transparent;
+            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label17.ForeColor = System.Drawing.Color.White;
+            this.label17.Location = new System.Drawing.Point(13, 56);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(74, 21);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "Tłuszcze :";
+            // 
+            // tb_wegle
+            // 
+            this.tb_wegle.AutoSize = true;
+            this.tb_wegle.BackColor = System.Drawing.Color.Transparent;
+            this.tb_wegle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tb_wegle.Location = new System.Drawing.Point(135, 95);
+            this.tb_wegle.Name = "tb_wegle";
+            this.tb_wegle.Size = new System.Drawing.Size(28, 21);
+            this.tb_wegle.TabIndex = 1;
+            this.tb_wegle.Text = "---";
+            // 
+            // guna2Separator1
+            // 
+            this.guna2Separator1.BackColor = System.Drawing.Color.Transparent;
+            this.guna2Separator1.FillColor = System.Drawing.Color.DarkGray;
+            this.guna2Separator1.Location = new System.Drawing.Point(10, 178);
+            this.guna2Separator1.Name = "guna2Separator1";
+            this.guna2Separator1.Size = new System.Drawing.Size(405, 20);
+            this.guna2Separator1.TabIndex = 3;
             // 
             // label15
             // 
@@ -657,211 +867,48 @@ namespace MicroMeter_Pro
             this.button_wyczysc.Name = "button_wyczysc";
             this.button_wyczysc.ShadowDecoration.Parent = this.button_wyczysc;
             this.button_wyczysc.Size = new System.Drawing.Size(105, 45);
-            this.button_wyczysc.TabIndex = 6;
+            this.button_wyczysc.TabIndex = 2;
             this.button_wyczysc.Text = "WYCZYŚĆ DANE";
             // 
-            // tb_bialko
+            // label19_ffm
             // 
-            this.tb_bialko.AutoSize = true;
-            this.tb_bialko.BackColor = System.Drawing.Color.Transparent;
-            this.tb_bialko.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tb_bialko.ForeColor = System.Drawing.Color.Black;
-            this.tb_bialko.Location = new System.Drawing.Point(78, 14);
-            this.tb_bialko.Name = "tb_bialko";
-            this.tb_bialko.Size = new System.Drawing.Size(28, 21);
-            this.tb_bialko.TabIndex = 1;
-            this.tb_bialko.Text = "---";
+            this.label19_ffm.AutoSize = true;
+            this.label19_ffm.BackColor = System.Drawing.Color.Transparent;
+            this.label19_ffm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19_ffm.ForeColor = System.Drawing.Color.Black;
+            this.label19_ffm.Location = new System.Drawing.Point(14, 158);
+            this.label19_ffm.Name = "label19_ffm";
+            this.label19_ffm.Size = new System.Drawing.Size(47, 21);
+            this.label19_ffm.TabIndex = 2;
+            this.label19_ffm.Text = "FFM :";
             // 
-            // tb_tluszcze
+            // tbox_fat
             // 
-            this.tb_tluszcze.AutoSize = true;
-            this.tb_tluszcze.BackColor = System.Drawing.Color.Transparent;
-            this.tb_tluszcze.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tb_tluszcze.Location = new System.Drawing.Point(93, 56);
-            this.tb_tluszcze.Name = "tb_tluszcze";
-            this.tb_tluszcze.Size = new System.Drawing.Size(28, 21);
-            this.tb_tluszcze.TabIndex = 1;
-            this.tb_tluszcze.Text = "---";
-            // 
-            // tb_wegle
-            // 
-            this.tb_wegle.AutoSize = true;
-            this.tb_wegle.BackColor = System.Drawing.Color.Transparent;
-            this.tb_wegle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tb_wegle.Location = new System.Drawing.Point(135, 95);
-            this.tb_wegle.Name = "tb_wegle";
-            this.tb_wegle.Size = new System.Drawing.Size(28, 21);
-            this.tb_wegle.TabIndex = 1;
-            this.tb_wegle.Text = "---";
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(13, 14);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(59, 21);
-            this.label16.TabIndex = 2;
-            this.label16.Text = "Białko :";
-            // 
-            // guna2Separator1
-            // 
-            this.guna2Separator1.BackColor = System.Drawing.Color.Transparent;
-            this.guna2Separator1.FillColor = System.Drawing.Color.DarkGray;
-            this.guna2Separator1.Location = new System.Drawing.Point(10, 178);
-            this.guna2Separator1.Name = "guna2Separator1";
-            this.guna2Separator1.Size = new System.Drawing.Size(405, 20);
-            this.guna2Separator1.TabIndex = 3;
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.BackColor = System.Drawing.Color.Transparent;
-            this.label17.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(13, 56);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(74, 21);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "Tłuszcze :";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.BackColor = System.Drawing.Color.Transparent;
-            this.label18.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(13, 98);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(116, 21);
-            this.label18.TabIndex = 2;
-            this.label18.Text = "Węglowodany :";
-            // 
-            // guna2GradientPanel1
-            // 
-            this.guna2GradientPanel1.BackColor = System.Drawing.Color.DimGray;
-            this.guna2GradientPanel1.BorderRadius = 5;
-            this.guna2GradientPanel1.Controls.Add(this.num_wegle);
-            this.guna2GradientPanel1.Controls.Add(this.num_tluszcze);
-            this.guna2GradientPanel1.Controls.Add(this.num_bialko);
-            this.guna2GradientPanel1.Controls.Add(this.label16);
-            this.guna2GradientPanel1.Controls.Add(this.tb_bialko);
-            this.guna2GradientPanel1.Controls.Add(this.label18);
-            this.guna2GradientPanel1.Controls.Add(this.tb_tluszcze);
-            this.guna2GradientPanel1.Controls.Add(this.label17);
-            this.guna2GradientPanel1.Controls.Add(this.tb_wegle);
-            this.guna2GradientPanel1.Location = new System.Drawing.Point(10, 204);
-            this.guna2GradientPanel1.Name = "guna2GradientPanel1";
-            this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
-            this.guna2GradientPanel1.Size = new System.Drawing.Size(405, 142);
-            this.guna2GradientPanel1.TabIndex = 4;
-            // 
-            // num_bialko
-            // 
-            this.num_bialko.BackColor = System.Drawing.Color.Transparent;
-            this.num_bialko.BorderRadius = 5;
-            this.num_bialko.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.num_bialko.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.num_bialko.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.num_bialko.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.num_bialko.DisabledState.Parent = this.num_bialko;
-            this.num_bialko.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.num_bialko.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.num_bialko.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.num_bialko.FocusedState.Parent = this.num_bialko;
-            this.num_bialko.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.num_bialko.ForeColor = System.Drawing.Color.Black;
-            this.num_bialko.Location = new System.Drawing.Point(324, 11);
-            this.num_bialko.Maximum = new decimal(new int[] {
-            35,
-            0,
-            0,
-            0});
-            this.num_bialko.Minimum = new decimal(new int[] {
-            15,
-            0,
-            0,
-            0});
-            this.num_bialko.Name = "num_bialko";
-            this.num_bialko.ShadowDecoration.Parent = this.num_bialko;
-            this.num_bialko.Size = new System.Drawing.Size(74, 30);
-            this.num_bialko.TabIndex = 3;
-            this.num_bialko.Value = new decimal(new int[] {
-            25,
-            0,
-            0,
-            0});
-            // 
-            // num_tluszcze
-            // 
-            this.num_tluszcze.BackColor = System.Drawing.Color.Transparent;
-            this.num_tluszcze.BorderRadius = 5;
-            this.num_tluszcze.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.num_tluszcze.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.num_tluszcze.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.num_tluszcze.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.num_tluszcze.DisabledState.Parent = this.num_tluszcze;
-            this.num_tluszcze.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.num_tluszcze.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.num_tluszcze.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.num_tluszcze.FocusedState.Parent = this.num_tluszcze;
-            this.num_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.num_tluszcze.ForeColor = System.Drawing.Color.Black;
-            this.num_tluszcze.Location = new System.Drawing.Point(324, 53);
-            this.num_tluszcze.Maximum = new decimal(new int[] {
-            35,
-            0,
-            0,
-            0});
-            this.num_tluszcze.Minimum = new decimal(new int[] {
-            20,
-            0,
-            0,
-            0});
-            this.num_tluszcze.Name = "num_tluszcze";
-            this.num_tluszcze.ShadowDecoration.Parent = this.num_tluszcze;
-            this.num_tluszcze.Size = new System.Drawing.Size(74, 30);
-            this.num_tluszcze.TabIndex = 3;
-            this.num_tluszcze.Value = new decimal(new int[] {
-            26,
-            0,
-            0,
-            0});
-            // 
-            // num_wegle
-            // 
-            this.num_wegle.BackColor = System.Drawing.Color.Transparent;
-            this.num_wegle.BorderRadius = 5;
-            this.num_wegle.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.num_wegle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.num_wegle.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.num_wegle.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.num_wegle.DisabledState.Parent = this.num_wegle;
-            this.num_wegle.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
-            this.num_wegle.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
-            this.num_wegle.Enabled = false;
-            this.num_wegle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.num_wegle.FocusedState.Parent = this.num_wegle;
-            this.num_wegle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.num_wegle.ForeColor = System.Drawing.Color.Black;
-            this.num_wegle.Location = new System.Drawing.Point(324, 95);
-            this.num_wegle.Maximum = new decimal(new int[] {
-            65,
-            0,
-            0,
-            0});
-            this.num_wegle.Name = "num_wegle";
-            this.num_wegle.ShadowDecoration.Parent = this.num_wegle;
-            this.num_wegle.Size = new System.Drawing.Size(74, 30);
-            this.num_wegle.TabIndex = 3;
-            this.num_wegle.UpDownButtonBorderVisible = false;
-            this.num_wegle.Value = new decimal(new int[] {
-            49,
-            0,
-            0,
-            0});
+            this.tbox_fat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbox_fat.DefaultText = "";
+            this.tbox_fat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbox_fat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbox_fat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_fat.DisabledState.Parent = this.tbox_fat;
+            this.tbox_fat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_fat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_fat.FocusedState.Parent = this.tbox_fat;
+            this.tbox_fat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbox_fat.ForeColor = System.Drawing.Color.Black;
+            this.tbox_fat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_fat.HoverState.Parent = this.tbox_fat;
+            this.tbox_fat.Location = new System.Drawing.Point(80, 154);
+            this.tbox_fat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbox_fat.Name = "tbox_fat";
+            this.tbox_fat.PasswordChar = '\0';
+            this.tbox_fat.PlaceholderText = "% tłuszczu";
+            this.tbox_fat.SelectedText = "";
+            this.tbox_fat.ShadowDecoration.Parent = this.tbox_fat;
+            this.tbox_fat.Size = new System.Drawing.Size(99, 30);
+            this.tbox_fat.TabIndex = 3;
+            this.tbox_fat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_fat.TextChanged += new System.EventHandler(this.tbox_wiek_TextChanged);
+            this.tbox_fat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TylkoLiczbyIZnakDziesietny);
             // 
             // Form1
             // 
@@ -890,9 +937,9 @@ namespace MicroMeter_Pro
             this.guna2GroupBox3.PerformLayout();
             this.guna2GradientPanel1.ResumeLayout(false);
             this.guna2GradientPanel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.num_bialko)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.num_tluszcze)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_wegle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_tluszcze)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.num_bialko)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -945,6 +992,8 @@ namespace MicroMeter_Pro
         private Guna.UI2.WinForms.Guna2NumericUpDown num_wegle;
         private Guna.UI2.WinForms.Guna2NumericUpDown num_tluszcze;
         private Guna.UI2.WinForms.Guna2NumericUpDown num_bialko;
+        private Guna.UI2.WinForms.Guna2TextBox tbox_fat;
+        private System.Windows.Forms.Label label19_ffm;
     }
 }
 

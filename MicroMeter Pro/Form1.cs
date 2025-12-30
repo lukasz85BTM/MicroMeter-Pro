@@ -24,6 +24,9 @@ namespace MicroMeter_Pro
             tbox_wzrost.KeyPress += TylkoLiczbyIZnakDziesietny;
             tbox_wiek.KeyPress += TylkoLiczbyIZnakDziesietny;
             button_wyczysc.Click += button_wyczysc_Click;
+            tbox_fat.KeyPress += TylkoLiczbyIZnakDziesietny;
+            tbox_fat.TextChanged += (s, e) => UpdateAll();
+
 
             // Ustaw domyślne wartości
             cbox_wzor.SelectedIndex = 0;
@@ -34,6 +37,8 @@ namespace MicroMeter_Pro
             num_tluszcze.ValueChanged += (s, e) => ObliczMakroskladniki();
 
             UpdateAll();
+            UpdateKatchUI();
+
         }
 
         private void TylkoLiczbyIZnakDziesietny(object sender, KeyPressEventArgs e)
@@ -205,13 +210,27 @@ namespace MicroMeter_Pro
                             : (447.593 + 9.247 * waga + 3.098 * wzrost - 4.330 * wiek);
                         break;
 
-                    case 2: // Katch–McArdle - pokazujemy ostrzeżenie
-                        // W rzeczywistości potrzebujemy % tkanki tłuszczowej
-                        // Na razie użyjmy Mifflin jako fallback
-                        ppm = isMale
-                            ? (10 * waga + 6.25 * wzrost - 5 * wiek + 5)
-                            : (10 * waga + 6.25 * wzrost - 5 * wiek - 161);
-                        break;
+                    case 2: // Katch–McArdle
+                        {
+                            if (!double.TryParse(tbox_fat.Text,
+                                NumberStyles.Any,
+                                CultureInfo.CurrentCulture,
+                                out double fatPercent))
+                            {
+                                label16_ppm.Text = _defaultLabelText;
+                                return;
+                            }
+
+                            if (fatPercent <= 0 || fatPercent >= 100)
+                            {
+                                label16_ppm.Text = _defaultLabelText;
+                                return;
+                            }
+
+                            double ffm = waga * (1 - fatPercent / 100.0);
+                            ppm = 370 + (21.6 * ffm);
+                            break;
+                        }
 
                     default:
                         label16_ppm.Text = _defaultLabelText;
@@ -407,12 +426,24 @@ namespace MicroMeter_Pro
             }
         }
 
+        private void UpdateKatchUI()
+        {
+            bool isKatch = cbox_wzor.SelectedIndex == 2;
+            tbox_fat.Enabled = isKatch;
+
+            if (!isKatch)
+                tbox_fat.Text = string.Empty;
+        }
+
+
         private void button_wyczysc_Click(object sender, EventArgs e)
         {
             // Czyszczenie wszystkich pól tekstowych
             tbox_waga.Clear();
             tbox_wzrost.Clear();
             tbox_wiek.Clear();
+            tbox_fat.Clear();
+            tbox_fat.Enabled = false;
 
             // Resetowanie radio buttonów
             rb_male.Checked = false;
@@ -486,6 +517,7 @@ namespace MicroMeter_Pro
 
         private void cbox_wzor_SelectedIndexChanged(object sender, EventArgs e)
         {
+            UpdateKatchUI();
             UpdateAll();
         }
 
