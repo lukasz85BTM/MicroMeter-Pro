@@ -300,10 +300,9 @@ of this software and associated documentation files...
 
 ## 👨‍💻 Autor
 
-**[Twoje Imię]**
-- GitHub: [@twoj-username](https://github.com/twoj-username)
-- Email: twoj.email@example.com
-
+**Łukasz Kowalski**
+- GitHub: https://github.com/lukasz85BTM
+- Email: longdrive366@wp.pl
 ---
 
 ## 🙏 Podziękowania
