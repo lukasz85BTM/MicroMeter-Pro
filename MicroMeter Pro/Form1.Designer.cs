@@ -29,15 +29,18 @@ namespace MicroMeter_Pro
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.guna2GroupBox1 = new Guna.UI2.WinForms.Guna2GroupBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.rb_female = new Guna.UI2.WinForms.Guna2CustomRadioButton();
             this.rb_male = new Guna.UI2.WinForms.Guna2CustomRadioButton();
+            this.tbox_fat = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbox_wiek = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbox_wzrost = new Guna.UI2.WinForms.Guna2TextBox();
             this.tbox_waga = new Guna.UI2.WinForms.Guna2TextBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.label19_ffm = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -74,8 +77,7 @@ namespace MicroMeter_Pro
             this.label16_ppm = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.button_wyczysc = new Guna.UI2.WinForms.Guna2Button();
-            this.label19_ffm = new System.Windows.Forms.Label();
-            this.tbox_fat = new Guna.UI2.WinForms.Guna2TextBox();
+            this.guna2PictureBox1 = new Guna.UI2.WinForms.Guna2PictureBox();
             this.guna2GroupBox1.SuspendLayout();
             this.guna2GroupBox2.SuspendLayout();
             this.guna2GroupBox3.SuspendLayout();
@@ -83,11 +85,13 @@ namespace MicroMeter_Pro
             ((System.ComponentModel.ISupportInitialize)(this.num_wegle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_tluszcze)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_bialko)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2GroupBox1
             // 
             this.guna2GroupBox1.BorderRadius = 5;
+            this.guna2GroupBox1.BorderThickness = 0;
             this.guna2GroupBox1.Controls.Add(this.label6);
             this.guna2GroupBox1.Controls.Add(this.label5);
             this.guna2GroupBox1.Controls.Add(this.rb_female);
@@ -102,7 +106,7 @@ namespace MicroMeter_Pro
             this.guna2GroupBox1.Controls.Add(this.label2);
             this.guna2GroupBox1.Controls.Add(this.label1);
             this.guna2GroupBox1.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.guna2GroupBox1.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GroupBox1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.guna2GroupBox1.Font = new System.Drawing.Font("Segoe UI Semibold", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.guna2GroupBox1.ForeColor = System.Drawing.Color.White;
             this.guna2GroupBox1.Location = new System.Drawing.Point(12, 64);
@@ -116,7 +120,7 @@ namespace MicroMeter_Pro
             // 
             this.label6.AutoSize = true;
             this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.ForeColor = System.Drawing.Color.White;
             this.label6.Location = new System.Drawing.Point(200, 201);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(47, 15);
@@ -127,7 +131,7 @@ namespace MicroMeter_Pro
             // 
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.ForeColor = System.Drawing.Color.White;
             this.label5.Location = new System.Drawing.Point(101, 201);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 15);
@@ -178,8 +182,39 @@ namespace MicroMeter_Pro
             this.rb_male.UncheckedState.Parent = this.rb_male;
             this.rb_male.CheckedChanged += new System.EventHandler(this.rb_male_CheckedChanged);
             // 
+            // tbox_fat
+            // 
+            this.tbox_fat.BorderThickness = 0;
+            this.tbox_fat.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.tbox_fat.DefaultText = "";
+            this.tbox_fat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.tbox_fat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.tbox_fat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_fat.DisabledState.Parent = this.tbox_fat;
+            this.tbox_fat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_fat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.tbox_fat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_fat.FocusedState.Parent = this.tbox_fat;
+            this.tbox_fat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tbox_fat.ForeColor = System.Drawing.Color.White;
+            this.tbox_fat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.tbox_fat.HoverState.Parent = this.tbox_fat;
+            this.tbox_fat.Location = new System.Drawing.Point(80, 154);
+            this.tbox_fat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.tbox_fat.Name = "tbox_fat";
+            this.tbox_fat.PasswordChar = '\0';
+            this.tbox_fat.PlaceholderText = "% tłuszczu";
+            this.tbox_fat.SelectedText = "";
+            this.tbox_fat.ShadowDecoration.Parent = this.tbox_fat;
+            this.tbox_fat.Size = new System.Drawing.Size(99, 30);
+            this.tbox_fat.TabIndex = 3;
+            this.tbox_fat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbox_fat.TextChanged += new System.EventHandler(this.tbox_wiek_TextChanged);
+            this.tbox_fat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TylkoLiczbyIZnakDziesietny);
+            // 
             // tbox_wiek
             // 
+            this.tbox_wiek.BorderThickness = 0;
             this.tbox_wiek.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbox_wiek.DefaultText = "";
             this.tbox_wiek.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -187,10 +222,11 @@ namespace MicroMeter_Pro
             this.tbox_wiek.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbox_wiek.DisabledState.Parent = this.tbox_wiek;
             this.tbox_wiek.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_wiek.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbox_wiek.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wiek.FocusedState.Parent = this.tbox_wiek;
             this.tbox_wiek.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbox_wiek.ForeColor = System.Drawing.Color.Black;
+            this.tbox_wiek.ForeColor = System.Drawing.Color.White;
             this.tbox_wiek.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wiek.HoverState.Parent = this.tbox_wiek;
             this.tbox_wiek.Location = new System.Drawing.Point(80, 119);
@@ -208,6 +244,7 @@ namespace MicroMeter_Pro
             // 
             // tbox_wzrost
             // 
+            this.tbox_wzrost.BorderThickness = 0;
             this.tbox_wzrost.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbox_wzrost.DefaultText = "";
             this.tbox_wzrost.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -215,10 +252,11 @@ namespace MicroMeter_Pro
             this.tbox_wzrost.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbox_wzrost.DisabledState.Parent = this.tbox_wzrost;
             this.tbox_wzrost.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_wzrost.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbox_wzrost.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wzrost.FocusedState.Parent = this.tbox_wzrost;
             this.tbox_wzrost.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbox_wzrost.ForeColor = System.Drawing.Color.Black;
+            this.tbox_wzrost.ForeColor = System.Drawing.Color.White;
             this.tbox_wzrost.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_wzrost.HoverState.Parent = this.tbox_wzrost;
             this.tbox_wzrost.Location = new System.Drawing.Point(80, 84);
@@ -235,6 +273,7 @@ namespace MicroMeter_Pro
             // 
             // tbox_waga
             // 
+            this.tbox_waga.BorderThickness = 0;
             this.tbox_waga.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.tbox_waga.DefaultText = "";
             this.tbox_waga.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -242,10 +281,11 @@ namespace MicroMeter_Pro
             this.tbox_waga.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
             this.tbox_waga.DisabledState.Parent = this.tbox_waga;
             this.tbox_waga.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.tbox_waga.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.tbox_waga.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_waga.FocusedState.Parent = this.tbox_waga;
             this.tbox_waga.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbox_waga.ForeColor = System.Drawing.Color.Black;
+            this.tbox_waga.ForeColor = System.Drawing.Color.White;
             this.tbox_waga.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.tbox_waga.HoverState.Parent = this.tbox_waga;
             this.tbox_waga.Location = new System.Drawing.Point(80, 49);
@@ -265,19 +305,31 @@ namespace MicroMeter_Pro
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(13, 198);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(41, 21);
             this.label4.TabIndex = 2;
             this.label4.Text = "Płeć:";
             // 
+            // label19_ffm
+            // 
+            this.label19_ffm.AutoSize = true;
+            this.label19_ffm.BackColor = System.Drawing.Color.Transparent;
+            this.label19_ffm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label19_ffm.ForeColor = System.Drawing.Color.White;
+            this.label19_ffm.Location = new System.Drawing.Point(14, 158);
+            this.label19_ffm.Name = "label19_ffm";
+            this.label19_ffm.Size = new System.Drawing.Size(47, 21);
+            this.label19_ffm.TabIndex = 2;
+            this.label19_ffm.Text = "FFM :";
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(14, 123);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 21);
@@ -289,7 +341,7 @@ namespace MicroMeter_Pro
             this.label2.AutoSize = true;
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.ForeColor = System.Drawing.Color.White;
             this.label2.Location = new System.Drawing.Point(14, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(62, 21);
@@ -301,7 +353,7 @@ namespace MicroMeter_Pro
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(14, 53);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(52, 21);
@@ -323,13 +375,15 @@ namespace MicroMeter_Pro
             // 
             this.cbox_wzor.Animated = true;
             this.cbox_wzor.BackColor = System.Drawing.Color.Transparent;
+            this.cbox_wzor.BorderColor = System.Drawing.Color.Black;
             this.cbox_wzor.BorderRadius = 5;
             this.cbox_wzor.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbox_wzor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_wzor.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbox_wzor.FocusedColor = System.Drawing.Color.Empty;
             this.cbox_wzor.FocusedState.Parent = this.cbox_wzor;
             this.cbox_wzor.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbox_wzor.ForeColor = System.Drawing.Color.Black;
+            this.cbox_wzor.ForeColor = System.Drawing.Color.White;
             this.cbox_wzor.FormattingEnabled = true;
             this.cbox_wzor.HoverState.Parent = this.cbox_wzor;
             this.cbox_wzor.ItemHeight = 30;
@@ -362,13 +416,15 @@ namespace MicroMeter_Pro
             // 
             this.cbox_pal.Animated = true;
             this.cbox_pal.BackColor = System.Drawing.Color.Transparent;
+            this.cbox_pal.BorderColor = System.Drawing.Color.Black;
             this.cbox_pal.BorderRadius = 5;
             this.cbox_pal.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
             this.cbox_pal.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbox_pal.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.cbox_pal.FocusedColor = System.Drawing.Color.Empty;
             this.cbox_pal.FocusedState.Parent = this.cbox_pal;
             this.cbox_pal.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cbox_pal.ForeColor = System.Drawing.Color.Black;
+            this.cbox_pal.ForeColor = System.Drawing.Color.White;
             this.cbox_pal.FormattingEnabled = true;
             this.cbox_pal.HoverState.Parent = this.cbox_pal;
             this.cbox_pal.ItemHeight = 30;
@@ -402,6 +458,7 @@ namespace MicroMeter_Pro
             // guna2GroupBox2
             // 
             this.guna2GroupBox2.BorderRadius = 5;
+            this.guna2GroupBox2.BorderThickness = 0;
             this.guna2GroupBox2.Controls.Add(this.rb_miesniowa);
             this.guna2GroupBox2.Controls.Add(this.rb_tycie);
             this.guna2GroupBox2.Controls.Add(this.rb_redukcja);
@@ -411,7 +468,7 @@ namespace MicroMeter_Pro
             this.guna2GroupBox2.Controls.Add(this.label10);
             this.guna2GroupBox2.Controls.Add(this.label9);
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.DeepSkyBlue;
-            this.guna2GroupBox2.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GroupBox2.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox2.Location = new System.Drawing.Point(12, 309);
@@ -491,7 +548,7 @@ namespace MicroMeter_Pro
             // 
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
-            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.ForeColor = System.Drawing.Color.White;
             this.label12.Location = new System.Drawing.Point(43, 132);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(177, 21);
@@ -524,7 +581,7 @@ namespace MicroMeter_Pro
             // 
             this.label11.AutoSize = true;
             this.label11.BackColor = System.Drawing.Color.Transparent;
-            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(43, 106);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(60, 21);
@@ -535,7 +592,7 @@ namespace MicroMeter_Pro
             // 
             this.label10.AutoSize = true;
             this.label10.BackColor = System.Drawing.Color.Transparent;
-            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(43, 80);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(202, 21);
@@ -546,7 +603,7 @@ namespace MicroMeter_Pro
             // 
             this.label9.AutoSize = true;
             this.label9.BackColor = System.Drawing.Color.Transparent;
-            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.ForeColor = System.Drawing.Color.White;
             this.label9.Location = new System.Drawing.Point(43, 54);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(131, 21);
@@ -566,7 +623,7 @@ namespace MicroMeter_Pro
             this.guna2GroupBox3.Controls.Add(this.label16_ppm);
             this.guna2GroupBox3.Controls.Add(this.label13);
             this.guna2GroupBox3.CustomBorderColor = System.Drawing.Color.LimeGreen;
-            this.guna2GroupBox3.FillColor = System.Drawing.Color.Gainsboro;
+            this.guna2GroupBox3.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
             this.guna2GroupBox3.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.guna2GroupBox3.ForeColor = System.Drawing.Color.Black;
             this.guna2GroupBox3.Location = new System.Drawing.Point(303, 64);
@@ -589,6 +646,8 @@ namespace MicroMeter_Pro
             this.guna2GradientPanel1.Controls.Add(this.tb_tluszcze);
             this.guna2GradientPanel1.Controls.Add(this.label17);
             this.guna2GradientPanel1.Controls.Add(this.tb_wegle);
+            this.guna2GradientPanel1.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(45)))), ((int)(((byte)(48)))));
+            this.guna2GradientPanel1.FillColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(68)))), ((int)(((byte)(68)))));
             this.guna2GradientPanel1.Location = new System.Drawing.Point(10, 204);
             this.guna2GradientPanel1.Name = "guna2GradientPanel1";
             this.guna2GradientPanel1.ShadowDecoration.Parent = this.guna2GradientPanel1;
@@ -597,7 +656,9 @@ namespace MicroMeter_Pro
             // 
             // num_wegle
             // 
+            this.num_wegle.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.num_wegle.BackColor = System.Drawing.Color.Transparent;
+            this.num_wegle.BorderColor = System.Drawing.Color.Black;
             this.num_wegle.BorderRadius = 5;
             this.num_wegle.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.num_wegle.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -607,10 +668,11 @@ namespace MicroMeter_Pro
             this.num_wegle.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
             this.num_wegle.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
             this.num_wegle.Enabled = false;
+            this.num_wegle.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.num_wegle.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.num_wegle.FocusedState.Parent = this.num_wegle;
             this.num_wegle.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.num_wegle.ForeColor = System.Drawing.Color.Black;
+            this.num_wegle.ForeColor = System.Drawing.Color.White;
             this.num_wegle.Location = new System.Drawing.Point(324, 95);
             this.num_wegle.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.num_wegle.Maximum = new decimal(new int[] {
@@ -622,7 +684,6 @@ namespace MicroMeter_Pro
             this.num_wegle.ShadowDecoration.Parent = this.num_wegle;
             this.num_wegle.Size = new System.Drawing.Size(74, 30);
             this.num_wegle.TabIndex = 2;
-            this.num_wegle.UpDownButtonBorderVisible = false;
             this.num_wegle.Value = new decimal(new int[] {
             49,
             0,
@@ -632,6 +693,7 @@ namespace MicroMeter_Pro
             // num_tluszcze
             // 
             this.num_tluszcze.BackColor = System.Drawing.Color.Transparent;
+            this.num_tluszcze.BorderColor = System.Drawing.Color.Black;
             this.num_tluszcze.BorderRadius = 5;
             this.num_tluszcze.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.num_tluszcze.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -640,10 +702,11 @@ namespace MicroMeter_Pro
             this.num_tluszcze.DisabledState.Parent = this.num_tluszcze;
             this.num_tluszcze.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
             this.num_tluszcze.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num_tluszcze.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.num_tluszcze.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.num_tluszcze.FocusedState.Parent = this.num_tluszcze;
             this.num_tluszcze.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.num_tluszcze.ForeColor = System.Drawing.Color.Black;
+            this.num_tluszcze.ForeColor = System.Drawing.Color.White;
             this.num_tluszcze.Location = new System.Drawing.Point(324, 53);
             this.num_tluszcze.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.num_tluszcze.Maximum = new decimal(new int[] {
@@ -669,6 +732,7 @@ namespace MicroMeter_Pro
             // num_bialko
             // 
             this.num_bialko.BackColor = System.Drawing.Color.Transparent;
+            this.num_bialko.BorderColor = System.Drawing.Color.Black;
             this.num_bialko.BorderRadius = 5;
             this.num_bialko.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.num_bialko.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
@@ -677,10 +741,11 @@ namespace MicroMeter_Pro
             this.num_bialko.DisabledState.Parent = this.num_bialko;
             this.num_bialko.DisabledState.UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(177)))), ((int)(((byte)(177)))), ((int)(((byte)(177)))));
             this.num_bialko.DisabledState.UpDownButtonForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(203)))), ((int)(((byte)(203)))), ((int)(((byte)(203)))));
+            this.num_bialko.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.num_bialko.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.num_bialko.FocusedState.Parent = this.num_bialko;
             this.num_bialko.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.num_bialko.ForeColor = System.Drawing.Color.Black;
+            this.num_bialko.ForeColor = System.Drawing.Color.White;
             this.num_bialko.Location = new System.Drawing.Point(324, 11);
             this.num_bialko.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.num_bialko.Maximum = new decimal(new int[] {
@@ -787,7 +852,7 @@ namespace MicroMeter_Pro
             this.label15.AutoSize = true;
             this.label15.BackColor = System.Drawing.Color.Transparent;
             this.label15.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.ForeColor = System.Drawing.Color.White;
             this.label15.Location = new System.Drawing.Point(20, 150);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(68, 25);
@@ -799,7 +864,7 @@ namespace MicroMeter_Pro
             this.label14.AutoSize = true;
             this.label14.BackColor = System.Drawing.Color.Transparent;
             this.label14.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.ForeColor = System.Drawing.Color.White;
             this.label14.Location = new System.Drawing.Point(20, 105);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(75, 25);
@@ -811,7 +876,7 @@ namespace MicroMeter_Pro
             this.label16_BMI.AutoSize = true;
             this.label16_BMI.BackColor = System.Drawing.Color.Transparent;
             this.label16_BMI.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16_BMI.ForeColor = System.Drawing.Color.Black;
+            this.label16_BMI.ForeColor = System.Drawing.Color.White;
             this.label16_BMI.Location = new System.Drawing.Point(100, 150);
             this.label16_BMI.Name = "label16_BMI";
             this.label16_BMI.Size = new System.Drawing.Size(20, 25);
@@ -823,7 +888,7 @@ namespace MicroMeter_Pro
             this.label16_cpm.AutoSize = true;
             this.label16_cpm.BackColor = System.Drawing.Color.Transparent;
             this.label16_cpm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16_cpm.ForeColor = System.Drawing.Color.Black;
+            this.label16_cpm.ForeColor = System.Drawing.Color.White;
             this.label16_cpm.Location = new System.Drawing.Point(101, 105);
             this.label16_cpm.Name = "label16_cpm";
             this.label16_cpm.Size = new System.Drawing.Size(20, 25);
@@ -835,7 +900,7 @@ namespace MicroMeter_Pro
             this.label16_ppm.AutoSize = true;
             this.label16_ppm.BackColor = System.Drawing.Color.Transparent;
             this.label16_ppm.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16_ppm.ForeColor = System.Drawing.Color.Black;
+            this.label16_ppm.ForeColor = System.Drawing.Color.White;
             this.label16_ppm.Location = new System.Drawing.Point(100, 60);
             this.label16_ppm.Name = "label16_ppm";
             this.label16_ppm.Size = new System.Drawing.Size(20, 25);
@@ -847,7 +912,7 @@ namespace MicroMeter_Pro
             this.label13.AutoSize = true;
             this.label13.BackColor = System.Drawing.Color.Transparent;
             this.label13.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.ForeColor = System.Drawing.Color.White;
             this.label13.Location = new System.Drawing.Point(20, 60);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(74, 25);
@@ -870,45 +935,16 @@ namespace MicroMeter_Pro
             this.button_wyczysc.TabIndex = 2;
             this.button_wyczysc.Text = "WYCZYŚĆ DANE";
             // 
-            // label19_ffm
+            // guna2PictureBox1
             // 
-            this.label19_ffm.AutoSize = true;
-            this.label19_ffm.BackColor = System.Drawing.Color.Transparent;
-            this.label19_ffm.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label19_ffm.ForeColor = System.Drawing.Color.Black;
-            this.label19_ffm.Location = new System.Drawing.Point(14, 158);
-            this.label19_ffm.Name = "label19_ffm";
-            this.label19_ffm.Size = new System.Drawing.Size(47, 21);
-            this.label19_ffm.TabIndex = 2;
-            this.label19_ffm.Text = "FFM :";
-            // 
-            // tbox_fat
-            // 
-            this.tbox_fat.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.tbox_fat.DefaultText = "";
-            this.tbox_fat.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
-            this.tbox_fat.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
-            this.tbox_fat.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbox_fat.DisabledState.Parent = this.tbox_fat;
-            this.tbox_fat.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
-            this.tbox_fat.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbox_fat.FocusedState.Parent = this.tbox_fat;
-            this.tbox_fat.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.tbox_fat.ForeColor = System.Drawing.Color.Black;
-            this.tbox_fat.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.tbox_fat.HoverState.Parent = this.tbox_fat;
-            this.tbox_fat.Location = new System.Drawing.Point(80, 154);
-            this.tbox_fat.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.tbox_fat.Name = "tbox_fat";
-            this.tbox_fat.PasswordChar = '\0';
-            this.tbox_fat.PlaceholderText = "% tłuszczu";
-            this.tbox_fat.SelectedText = "";
-            this.tbox_fat.ShadowDecoration.Parent = this.tbox_fat;
-            this.tbox_fat.Size = new System.Drawing.Size(99, 30);
-            this.tbox_fat.TabIndex = 3;
-            this.tbox_fat.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbox_fat.TextChanged += new System.EventHandler(this.tbox_wiek_TextChanged);
-            this.tbox_fat.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TylkoLiczbyIZnakDziesietny);
+            this.guna2PictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("guna2PictureBox1.Image")));
+            this.guna2PictureBox1.Location = new System.Drawing.Point(303, 12);
+            this.guna2PictureBox1.Name = "guna2PictureBox1";
+            this.guna2PictureBox1.ShadowDecoration.Parent = this.guna2PictureBox1;
+            this.guna2PictureBox1.Size = new System.Drawing.Size(139, 46);
+            this.guna2PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2PictureBox1.TabIndex = 5;
+            this.guna2PictureBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -916,6 +952,7 @@ namespace MicroMeter_Pro
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(30)))), ((int)(((byte)(30)))));
             this.ClientSize = new System.Drawing.Size(739, 499);
+            this.Controls.Add(this.guna2PictureBox1);
             this.Controls.Add(this.button_wyczysc);
             this.Controls.Add(this.guna2GroupBox3);
             this.Controls.Add(this.guna2GroupBox2);
@@ -940,6 +977,7 @@ namespace MicroMeter_Pro
             ((System.ComponentModel.ISupportInitialize)(this.num_wegle)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_tluszcze)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.num_bialko)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2PictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -994,6 +1032,7 @@ namespace MicroMeter_Pro
         private Guna.UI2.WinForms.Guna2NumericUpDown num_bialko;
         private Guna.UI2.WinForms.Guna2TextBox tbox_fat;
         private System.Windows.Forms.Label label19_ffm;
+        private Guna.UI2.WinForms.Guna2PictureBox guna2PictureBox1;
     }
 }
 
