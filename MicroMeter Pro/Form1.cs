@@ -17,14 +17,9 @@ namespace MicroMeter_Pro
             InitializeComponent();
         }
 
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void guna2CustomRadioButton4_CheckedChanged(object sender, EventArgs e)
         {
-
+            //zmieniono dane
         }
     }
 }
